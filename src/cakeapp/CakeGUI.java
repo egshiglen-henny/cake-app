@@ -251,27 +251,58 @@ public class CakeGUI extends javax.swing.JFrame {
             int cakeWeight = Integer.parseInt(weightTextField.getText());
             String expiryDate = expiryDateTextField.getText();
             
+            // Validate inputs
+            if (!isValidCakeSelection() || !isValidCakeWeight (cakeWeight) || !isValidExpiryDate (expiryDate)) {
+                return; // If any of the validation fails, can't go to the next process
+            }
             
-        }
+            // Creating a new Cake object
+            Cake newCake = new Cake (cakeName, cakeWeight, expiryDate);
+            if (ovenQueue.isFull()) {
+                JOptionPane.showMessageDialog(this, "Oven is FULL! Please remove a cake before adding a new one.", "Oven Full", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            ovenQueue.addCake(newCake);
+            mainTextArea.setText("Added cake:\n" + newCake);
+            JOptionPane.showMessageDialog(this, "Cake added to the oven successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            clearInputs();
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(this, "Please enter a valid number for the weight.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            }
 //        JOptionPane.showMessageDialog(this, "Invalid weight. Please enter a value between 1 and 2000 grams.", "Input Error", JOptionPane.ERROR_MESSAGE);
 
         
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
-        // TODO add your handling code here:
+        if (ovenQueue.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No cakes to remove. The oven is EMPTY!", "Oven Empty", JOptionPane.WARNING_MESSAGE);
+        } else {
+            Cake removedCake = (Cake) ovenQueue.removeCake();
+            mainTextArea.setText("Removed cake:\n" + removedCake);
+        }
     }//GEN-LAST:event_removeButtonActionPerformed
 
     private void displayAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayAllButtonActionPerformed
-        // TODO add your handling code here:
+        if (ovenQueue.isEmpty()) {
+            mainTextArea.setText("No cakes in the oven. The oven is EMPTY!");
+        } else {
+            mainTextArea.setText(ovenQueue.displayCakes());
+        }
     }//GEN-LAST:event_displayAllButtonActionPerformed
 
     private void peekTopButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_peekTopButtonActionPerformed
-        // TODO add your handling code here:
+        if (ovenQueue.isEmpty()) {
+            mainTextArea.setText("No cakes in the oven. The oven is EMPTY!");
+        } else {
+            Cake topCake = (Cake) ovenQueue.peekFrontCake();
+            mainTextArea.setText("Top cake in the oven:\n" + topCake);
+        }
     }//GEN-LAST:event_peekTopButtonActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
+        mainTextArea.setText("Exiting the program . . .");
     }//GEN-LAST:event_exitButtonActionPerformed
 
     private void weightTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_weightTextFieldActionPerformed
@@ -355,6 +386,12 @@ public class CakeGUI extends javax.swing.JFrame {
         }
 
         return true; // Valid selection made
+    }
+    
+    private void clearInputs() {
+        cakeNameBox.setSelectedIndex(0);
+        weightTextField.setText("");
+        expiryDateTextField.setText("");
     }
 
     /**
