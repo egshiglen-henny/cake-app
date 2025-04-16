@@ -47,6 +47,7 @@ public class CakeQueue implements CakeQueueInterface {
             System.out.println("No more capacity."); // Printing a message if the queue is full
             return; // Exiting the method without adding the cake
         }
+        
         // Checking if the object is an instance of Cake
         if (element instanceof Cake) { 
             theQueue.add((Cake) element);  // Adding Cake object to the queue
