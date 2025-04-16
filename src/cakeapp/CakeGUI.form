@@ -117,7 +117,7 @@
                                       <Component id="addButton" min="-2" max="-2" attributes="0"/>
                                       <Component id="removeButton" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="cakeNameSelection" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cakeNameBox" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -140,7 +140,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="cakeName" min="-2" max="-2" attributes="0"/>
-                          <Component id="cakeNameSelection" min="-2" max="-2" attributes="0"/>
+                          <Component id="cakeNameBox" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -265,7 +265,7 @@
         <Property name="text" type="java.lang.String" value="WELCOME TO CAKE APPLICATION! Here you can "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="cakeNameSelection">
+    <Component class="javax.swing.JComboBox" name="cakeNameBox">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">

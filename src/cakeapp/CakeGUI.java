@@ -4,6 +4,10 @@
  */
 package cakeapp;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author egshi
@@ -17,17 +21,19 @@ public class CakeGUI extends javax.swing.JFrame {
     private CakeQueueInterface ovenQueue = new CakeQueue();
     public CakeGUI() {
         initComponents();
+        initializeCakeNameBox();
+        
        
     }
     
-//    private void initializeCakeNameBox(){
-//        cakeNameBox.removeAllItems();
-//        cakeNameBox.addItem("Pineapple cake");
-//        cakeNameBox.addItem("Strawberry cake");
-//        cakeNameBox.addItem("Chocolate cake");
-//        cakeNameBox.addItem("Vanilla cake");
-//        cakeNameBox.addItem("Plain cake");
-//    }
+    private void initializeCakeNameBox(){
+        cakeNameBox.removeAllItems();
+        cakeNameBox.addItem("Pineapple cake");
+        cakeNameBox.addItem("Strawberry cake");
+        cakeNameBox.addItem("Chocolate cake");
+        cakeNameBox.addItem("Vanilla cake");
+        cakeNameBox.addItem("Plain cake");
+    }
 
 
     /**
@@ -59,7 +65,7 @@ public class CakeGUI extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         mainTextArea = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
-        cakeNameSelection = new javax.swing.JComboBox<>();
+        cakeNameBox = new javax.swing.JComboBox<>();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
@@ -157,7 +163,7 @@ public class CakeGUI extends javax.swing.JFrame {
 
         jLabel1.setText("WELCOME TO CAKE APPLICATION! Here you can ");
 
-        cakeNameSelection.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cakeNameBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -193,7 +199,7 @@ public class CakeGUI extends javax.swing.JFrame {
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(addButton)
                                         .addComponent(removeButton))
-                                    .addComponent(cakeNameSelection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(cakeNameBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(9, 9, 9)))
                 .addContainerGap(105, Short.MAX_VALUE))
         );
@@ -209,7 +215,7 @@ public class CakeGUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(cakeName)
-                            .addComponent(cakeNameSelection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cakeNameBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cakeWieght)
@@ -240,6 +246,16 @@ public class CakeGUI extends javax.swing.JFrame {
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         // TODO add your handling code here:
+        try {
+            String cakeName = cakeNameBox.getSelectedItem().toString();
+            int cakeWeight = Integer.parseInt(weightTextField.getText());
+            String expiryDate = expiryDateTextField.getText();
+            
+            
+        }
+//        JOptionPane.showMessageDialog(this, "Invalid weight. Please enter a value between 1 and 2000 grams.", "Input Error", JOptionPane.ERROR_MESSAGE);
+
+        
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
@@ -266,10 +282,85 @@ public class CakeGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_expiryDateTextFieldActionPerformed
 
+    // Validating if the best-before date is in the correct format and within the required range
+    private boolean isValidExpiryDate(String expiryDate) {
+        // Regular expression to check if the date is in the correct format YYYY-MM-DD
+        String regex = "^(\\d{4})-(\\d{2})-(\\d{2})$";
+        if (!expiryDate.matches(regex)) { // If the date doesn't match the format
+            JOptionPane.showMessageDialog(this, "Invalid date format. Please use YYYY-MM-DD.", "Date Format Error", JOptionPane.ERROR_MESSAGE);
+            return false; // Returning false for invalid format
+        }
+
+        try {
+            // Creating a SimpleDateFormat object to converting the date
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            simpleDateFormat.setLenient(false); // Disabling lenient parsing to ensure strict date validation
+
+            // Converting the expiry date string into a Date object
+            Date bestBefore = simpleDateFormat.parse(expiryDate);
+
+            // Split the date string to extract the year
+            String[] dateParts = expiryDate.split("-");
+            int year = Integer.parseInt(dateParts[0]); // Converting the year part to an integer
+
+            // Check if the year is within a valid range (between 1000 and 9999)
+            if (year < 1000 || year > 9999) {
+                JOptionPane.showMessageDialog(this, "Invalid year. Please enter a valid year (YYYY).", "Date Format Error", JOptionPane.ERROR_MESSAGE);
+                return false; // Returning false if the year is out of range
+            }
+
+            // Getting the current date
+            Date currentDate = new Date();
+            // Calculating the date two weeks from today
+            long twoWeeksInMillis = 14L * 24 * 60 * 60 * 1000; // 14 days in milliseconds
+            Date twoWeeksFromNow = new Date(currentDate.getTime() + twoWeeksInMillis);
+
+            // Checking if the best-before date is in the past
+            if (bestBefore.before(currentDate)) {
+                JOptionPane.showMessageDialog(this, "Best-before date cannot be in the past.", "Date Format Error", JOptionPane.ERROR_MESSAGE);
+                return false; // Returning false if the date is before today
+            }
+
+            // Check if the best-before date is more than two weeks from today
+            if (bestBefore.after(twoWeeksFromNow)) {
+                JOptionPane.showMessageDialog(this, "Best-before date must be within two weeks from today.", "Date Format Error", JOptionPane.ERROR_MESSAGE);
+                return false; // Return false if the date is too far in the future
+            }
+
+            // If all checks pass, return true indicating a valid expiry date
+            return true;
+
+        } catch (Exception e) { // Any exceptions during date conversion
+            JOptionPane.showMessageDialog(this, "Invalid date. Please use YYYY-MM-DD.", "Date Format Error", JOptionPane.ERROR_MESSAGE);
+            return false; // Returning false if an exception occurs
+        }
+    }
+
+    // Validating if the cake weight is a valid positive number
+    private boolean isValidCakeWeight(int cakeWeight) {
+        if (cakeWeight <= 0) { // Checking if the weight is zero or negative
+            JOptionPane.showMessageDialog(this, "Cake weight must be a positive number.", "Weight Error", JOptionPane.ERROR_MESSAGE);
+            return false; // Returning false if the weight is not a positive number
+        }
+        return true; // Returning true if the weight is a valid number
+    }
+    // Validating if the cake name is selected
+    private boolean isValidCakeSelection() {
+        String selectedCake = (String) cakeNameBox.getSelectedItem(); 
+
+        // Check if the default option or no option is selected
+        if (selectedCake == null || selectedCake.equals("Select a Cake")) { //if no cake name is selected
+            JOptionPane.showMessageDialog(this, "Please select a valid cake name.", "Selection Error", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+
+        return true; // Valid selection made
+    }
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    private void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -305,7 +396,7 @@ public class CakeGUI extends javax.swing.JFrame {
     private javax.swing.JLabel Title;
     private javax.swing.JButton addButton;
     private javax.swing.JLabel cakeName;
-    private javax.swing.JComboBox<String> cakeNameSelection;
+    private javax.swing.JComboBox<String> cakeNameBox;
     private javax.swing.JLabel cakeWieght;
     private javax.swing.JButton displayAllButton;
     private javax.swing.JButton exitButton;
