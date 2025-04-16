@@ -46,7 +46,6 @@ public class CakeGUI extends javax.swing.JFrame {
         jFrame2 = new javax.swing.JFrame();
         jColorChooser1 = new javax.swing.JColorChooser();
         Title = new javax.swing.JLabel();
-        cakeNameBox = new javax.swing.JComboBox<>();
         cakeName = new javax.swing.JLabel();
         cakeWieght = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -60,6 +59,7 @@ public class CakeGUI extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         mainTextArea = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
+        cakeNameSelection = new javax.swing.JComboBox<>();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
@@ -97,13 +97,6 @@ public class CakeGUI extends javax.swing.JFrame {
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         Title.setText("CAKE APPLICATION");
-
-        cakeNameBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cakeNameBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cakeNameBoxActionPerformed(evt);
-            }
-        });
 
         cakeName.setText("Cake name:");
 
@@ -164,6 +157,8 @@ public class CakeGUI extends javax.swing.JFrame {
 
         jLabel1.setText("WELCOME TO CAKE APPLICATION! Here you can ");
 
+        cakeNameSelection.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -171,33 +166,35 @@ public class CakeGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(226, 226, 226)
-                            .addComponent(Title))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(74, 74, 74)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(cakeName)
-                                        .addComponent(cakeWieght)
-                                        .addComponent(jLabel3))
-                                    .addGap(60, 60, 60))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(27, 27, 27)))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(expiryDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(weightTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(cakeNameBox, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(displayAllButton)
-                                .addComponent(peekTopButton)
-                                .addComponent(exitButton)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(addButton)
-                                    .addComponent(removeButton))))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(226, 226, 226)
+                                .addComponent(Title))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(74, 74, 74)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(cakeName)
+                                            .addComponent(cakeWieght)
+                                            .addComponent(jLabel3))
+                                        .addGap(60, 60, 60))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(27, 27, 27)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(expiryDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(weightTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(displayAllButton)
+                                    .addComponent(peekTopButton)
+                                    .addComponent(exitButton)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(addButton)
+                                        .addComponent(removeButton))
+                                    .addComponent(cakeNameSelection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(9, 9, 9)))
                 .addContainerGap(105, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -209,9 +206,10 @@ public class CakeGUI extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cakeNameBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cakeName))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cakeName)
+                            .addComponent(cakeNameSelection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(cakeWieght)
@@ -239,11 +237,6 @@ public class CakeGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void cakeNameBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cakeNameBoxActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_cakeNameBoxActionPerformed
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         // TODO add your handling code here:
@@ -312,7 +305,7 @@ public class CakeGUI extends javax.swing.JFrame {
     private javax.swing.JLabel Title;
     private javax.swing.JButton addButton;
     private javax.swing.JLabel cakeName;
-    private javax.swing.JComboBox<String> cakeNameBox;
+    private javax.swing.JComboBox<String> cakeNameSelection;
     private javax.swing.JLabel cakeWieght;
     private javax.swing.JButton displayAllButton;
     private javax.swing.JButton exitButton;
