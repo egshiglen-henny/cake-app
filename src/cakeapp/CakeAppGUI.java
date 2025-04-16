@@ -15,6 +15,7 @@ public class CakeAppGUI {
     public static void main(String[] args) {
         // TODO code application logic here
         CakeGUI guicakeapp = new CakeGUI();
+        
         guicakeapp.setVisible(true);
     }
 }
