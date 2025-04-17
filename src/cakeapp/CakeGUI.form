@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.8" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Component class="javax.swing.JCheckBoxMenuItem" name="jCheckBoxMenuItem1">
       <Properties>
@@ -102,91 +102,90 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="jLabel6" min="-2" pref="285" max="-2" attributes="0"/>
                           </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jLabel1" min="-2" pref="418" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="cakeName" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="214" max="-2" attributes="0"/>
-                                          <Component id="cakeNameBox" pref="189" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="cakeWieght" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="27" pref="27" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="weightTextField" pref="188" max="32767" attributes="0"/>
-                                              <Component id="expiryDateTextField" max="32767" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="addButton" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="removeButton" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="displayAllButton" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="peekTopButton" alignment="0" max="32767" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
-                                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="searchByNameButton" max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jLabel1" min="-2" pref="418" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="cakeName" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="214" max="-2" attributes="0"/>
+                                                  <Component id="cakeNameBox" pref="189" max="32767" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="cakeWieght" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace min="27" pref="27" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="weightTextField" pref="188" max="32767" attributes="0"/>
+                                                      <Component id="expiryDateTextField" max="32767" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="addButton" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="removeButton" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="displayAllButton" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="peekTopButton" alignment="0" max="32767" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
+                                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Component id="removeByNameButton" min="-2" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="searchByNameButton" max="32767" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Component id="removeByNameButton" min="-2" max="-2" attributes="0"/>
+                                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="searchNameBox" max="32767" attributes="0"/>
+                                                  <Component id="removeNameBox" min="-2" pref="127" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Component id="sortByDateButton" alignment="1" max="32767" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                                      <Component id="reportButton" alignment="1" min="-2" pref="301" max="-2" attributes="0"/>
+                                                      <Component id="clearOvenButton" alignment="1" min="-2" pref="301" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="peekLastButton" alignment="0" min="-2" pref="294" max="-2" attributes="0"/>
+                                              </Group>
                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="searchNameBox" max="32767" attributes="0"/>
-                                          <Component id="removeNameBox" min="-2" pref="127" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="sortByDateButton" alignment="1" max="32767" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                              <Component id="reportButton" alignment="1" min="-2" pref="301" max="-2" attributes="0"/>
-                                              <Component id="clearOvenButton" alignment="1" min="-2" pref="301" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="exitButton" min="-2" pref="197" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="cakeAgeButton" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="sortByWeightButton" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="sortByNameButton" alignment="0" min="-2" pref="197" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="randomButton" min="-2" pref="197" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="peekLastButton" alignment="0" min="-2" pref="294" max="-2" attributes="0"/>
+                                          <Component id="displayExpiringCakebutton" min="-2" pref="197" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="exitButton" min="-2" pref="197" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="cakeAgeButton" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="sortByWeightButton" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="sortByNameButton" alignment="0" min="-2" pref="197" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="randomButton" min="-2" pref="197" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="displayExpiringCakebutton" min="-2" pref="197" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="jScrollPane1" min="-2" pref="325" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="jScrollPane1" min="-2" pref="324" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -204,9 +203,9 @@
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -277,14 +276,10 @@
                           <Component id="sortByDateButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="exitButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="jScrollPane1" min="-2" pref="528" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace pref="41" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -319,7 +314,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="addButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="1. Add cake to the oven"/>
+        <Property name="text" type="java.lang.String" value="1. Add cake to the oven &#x2705;"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addButtonActionPerformed"/>
@@ -327,7 +322,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="removeButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="2. Remove a cake from the oven"/>
+        <Property name="text" type="java.lang.String" value="2. Remove a cake from the oven &#x274c;"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="removeButtonActionPerformed"/>
@@ -335,7 +330,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="displayAllButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="3. View all cakes in the oven"/>
+        <Property name="text" type="java.lang.String" value="3. View all cakes in the oven \ud83d\udccb" containsInvalidXMLChars="true"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="displayAllButtonActionPerformed"/>
@@ -343,7 +338,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="peekTopButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="4. View the front cake in the oven"/>
+        <Property name="text" type="java.lang.String" value="4. View the front cake in the oven \ud83d\udc40" containsInvalidXMLChars="true"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="peekTopButtonActionPerformed"/>
@@ -351,7 +346,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="exitButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Exit"/>
+        <Property name="text" type="java.lang.String" value="Exit \ud83d\udd1a" containsInvalidXMLChars="true"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exitButtonActionPerformed"/>
@@ -412,7 +407,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="peekLastButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="5. View the last cake added in the oven"/>
+        <Property name="text" type="java.lang.String" value="5. View the last cake added in the oven \ud83d\udc40" containsInvalidXMLChars="true"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="peekLastButtonActionPerformed"/>
@@ -420,7 +415,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="searchByNameButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="6. Search cake by name"/>
+        <Property name="text" type="java.lang.String" value="6. Search cake by name \ud83d\udd0d" containsInvalidXMLChars="true"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchByNameButtonActionPerformed"/>
@@ -428,7 +423,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="removeByNameButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="7. Remove cake by name"/>
+        <Property name="text" type="java.lang.String" value="7. Remove cake by name &#x274c;"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="removeByNameButtonActionPerformed"/>
@@ -436,7 +431,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="clearOvenButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="8. Empty oven"/>
+        <Property name="text" type="java.lang.String" value="8. Empty oven &#x274c;"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clearOvenButtonActionPerformed"/>
@@ -444,7 +439,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="reportButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="9. Generate inventory report"/>
+        <Property name="text" type="java.lang.String" value="9. Generate inventory report \ud83d\udcca" containsInvalidXMLChars="true"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="reportButtonActionPerformed"/>
@@ -452,7 +447,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="sortByDateButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="10. Sort by expiry date"/>
+        <Property name="text" type="java.lang.String" value="10. Sort by expiry date \ud83d\udcc5" containsInvalidXMLChars="true"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sortByDateButtonActionPerformed"/>
@@ -460,7 +455,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="sortByNameButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="11. Sort Alphabetically"/>
+        <Property name="text" type="java.lang.String" value="11. Sort Alphabetically \ud83d\udd20" containsInvalidXMLChars="true"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sortByNameButtonActionPerformed"/>
@@ -468,7 +463,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="sortByWeightButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="12. Sort by weight"/>
+        <Property name="text" type="java.lang.String" value="12. Sort by weight &#x2696;"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sortByWeightButtonActionPerformed"/>
@@ -476,7 +471,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="displayExpiringCakebutton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="13. View expiring cakes"/>
+        <Property name="text" type="java.lang.String" value="13. View expiring cakes \ud83d\udc40" containsInvalidXMLChars="true"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="displayExpiringCakebuttonActionPerformed"/>
@@ -484,7 +479,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="cakeAgeButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="14. Check cake ages"/>
+        <Property name="text" type="java.lang.String" value="14. Check cake ages \ud83d\udcc6" containsInvalidXMLChars="true"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cakeAgeButtonActionPerformed"/>

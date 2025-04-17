@@ -156,35 +156,35 @@ public class CakeGUI extends javax.swing.JFrame {
 
         jLabel3.setText("Enter Best Before Date (YYYY-MM-DD, Max 14 days): ");
 
-        addButton.setText("1. Add cake to the oven");
+        addButton.setText("1. Add cake to the oven ✅");
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addButtonActionPerformed(evt);
             }
         });
 
-        removeButton.setText("2. Remove a cake from the oven");
+        removeButton.setText("2. Remove a cake from the oven ❌");
         removeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeButtonActionPerformed(evt);
             }
         });
 
-        displayAllButton.setText("3. View all cakes in the oven");
+        displayAllButton.setText("3. View all cakes in the oven 📋");
         displayAllButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 displayAllButtonActionPerformed(evt);
             }
         });
 
-        peekTopButton.setText("4. View the front cake in the oven");
+        peekTopButton.setText("4. View the front cake in the oven 👀");
         peekTopButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 peekTopButtonActionPerformed(evt);
             }
         });
 
-        exitButton.setText("Exit");
+        exitButton.setText("Exit 🔚");
         exitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitButtonActionPerformed(evt);
@@ -206,70 +206,70 @@ public class CakeGUI extends javax.swing.JFrame {
 
         jLabel5.setText("OTHER OPERATIONS");
 
-        peekLastButton.setText("5. View the last cake added in the oven");
+        peekLastButton.setText("5. View the last cake added in the oven 👀");
         peekLastButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 peekLastButtonActionPerformed(evt);
             }
         });
 
-        searchByNameButton.setText("6. Search cake by name");
+        searchByNameButton.setText("6. Search cake by name 🔍");
         searchByNameButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchByNameButtonActionPerformed(evt);
             }
         });
 
-        removeByNameButton.setText("7. Remove cake by name");
+        removeByNameButton.setText("7. Remove cake by name ❌");
         removeByNameButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeByNameButtonActionPerformed(evt);
             }
         });
 
-        clearOvenButton.setText("8. Empty oven");
+        clearOvenButton.setText("8. Empty oven ❌");
         clearOvenButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearOvenButtonActionPerformed(evt);
             }
         });
 
-        reportButton.setText("9. Generate inventory report");
+        reportButton.setText("9. Generate inventory report 📊");
         reportButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 reportButtonActionPerformed(evt);
             }
         });
 
-        sortByDateButton.setText("10. Sort by expiry date");
+        sortByDateButton.setText("10. Sort by expiry date 📅");
         sortByDateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sortByDateButtonActionPerformed(evt);
             }
         });
 
-        sortByNameButton.setText("11. Sort Alphabetically");
+        sortByNameButton.setText("11. Sort Alphabetically 🔠");
         sortByNameButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sortByNameButtonActionPerformed(evt);
             }
         });
 
-        sortByWeightButton.setText("12. Sort by weight");
+        sortByWeightButton.setText("12. Sort by weight ⚖");
         sortByWeightButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sortByWeightButtonActionPerformed(evt);
             }
         });
 
-        displayExpiringCakebutton.setText("13. View expiring cakes");
+        displayExpiringCakebutton.setText("13. View expiring cakes 👀");
         displayExpiringCakebutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 displayExpiringCakebuttonActionPerformed(evt);
             }
         });
 
-        cakeAgeButton.setText("14. Check cake ages");
+        cakeAgeButton.setText("14. Check cake ages 📆");
         cakeAgeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cakeAgeButtonActionPerformed(evt);
@@ -310,68 +310,67 @@ public class CakeGUI extends javax.swing.JFrame {
                                 .addGap(159, 159, 159)
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(101, 101, 101))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(cakeName)
-                                            .addGap(214, 214, 214)
-                                            .addComponent(cakeNameBox, 0, 189, Short.MAX_VALUE))
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel3)
-                                                .addComponent(cakeWieght))
-                                            .addGap(27, 27, 27)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(weightTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
-                                                .addComponent(expiryDateTextField))))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(addButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(removeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(displayAllButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(peekTopButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(182, 182, 182)
-                                            .addComponent(jLabel5))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(searchByNameButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(removeByNameButton)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(cakeName)
+                                                    .addGap(214, 214, 214)
+                                                    .addComponent(cakeNameBox, 0, 189, Short.MAX_VALUE))
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(jLabel3)
+                                                        .addComponent(cakeWieght))
+                                                    .addGap(27, 27, 27)
+                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(weightTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+                                                        .addComponent(expiryDateTextField))))
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(addButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(removeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(displayAllButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(peekTopButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addGap(182, 182, 182)
+                                                    .addComponent(jLabel5))))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(searchByNameButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(removeByNameButton)
+                                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(searchNameBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(removeNameBox, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(sortByDateButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(reportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(clearOvenButton, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(peekLastButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGap(0, 0, Short.MAX_VALUE)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(searchNameBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(removeNameBox, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(sortByDateButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(reportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(clearOvenButton, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(peekLastButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(0, 0, Short.MAX_VALUE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(cakeAgeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(sortByWeightButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(sortByNameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(randomButton, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(displayExpiringCakebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(38, 38, 38)))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(102, 102, 102))))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(cakeAgeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(sortByWeightButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(sortByNameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(randomButton, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(displayExpiringCakebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(38, 38, 38)))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(101, 101, 101))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -384,9 +383,9 @@ public class CakeGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel6))
+                .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -442,12 +441,9 @@ public class CakeGUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(sortByDateButton)
-                            .addComponent(exitButton))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1)
-                        .addContainerGap())))
+                            .addComponent(exitButton)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 528, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         pack();
@@ -474,7 +470,8 @@ public class CakeGUI extends javax.swing.JFrame {
             }
             // Adding a new cake to the oven queue
             ovenQueue.addCake(newCake);
-            mainTextArea.append("Added cake:\n" + newCake);
+            mainTextArea.append("✅ Added:\n" + newCake);
+            mainTextArea.append("\n--------------------------------------------------------------------\n");
             JOptionPane.showMessageDialog(this, "Cake added to the oven successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
             
             // Clearing input fields after adding
@@ -482,52 +479,55 @@ public class CakeGUI extends javax.swing.JFrame {
             
             } catch (NumberFormatException e) {
                 // Showing error when parsing the weight fails
-                JOptionPane.showMessageDialog(this, "Please enter a valid number for the weight.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Please enter a valid number for the weight (MIN:100g, MAX:3000g).", "Weight input error", JOptionPane.ERROR_MESSAGE);
             }
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
         // Removing the front cake if the oven is not empty
         if (ovenQueue.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "No cakes to remove. The oven is EMPTY!", "Oven Empty", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(this, "No cakes to remove. The oven is EMPTY!", "Oven empty ", JOptionPane.WARNING_MESSAGE);
         } else {
             Cake removedCake = (Cake) ovenQueue.removeCake();
-            mainTextArea.append("Removed cake:\n" + removedCake); // Displaying the removed cake details
+            mainTextArea.append("❌ Removed:\n" + removedCake); // Displaying the removed cake details
+            mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
         }
     }//GEN-LAST:event_removeButtonActionPerformed
 
     private void displayAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayAllButtonActionPerformed
         // Displaying all cakes in the oven
         if (ovenQueue.isEmpty()) { 
-            mainTextArea.append("No cakes in the oven. The oven is EMPTY!");
+            JOptionPane.showMessageDialog(this, "No cakes in the oven to display. The oven is EMPTY!", "Oven empty", JOptionPane.WARNING_MESSAGE);
         } else {
-            mainTextArea.append(ovenQueue.displayCakes());
+            mainTextArea.append("📋 All Cakes in Oven: \n" + ovenQueue.displayCakes());
+            mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
         }
     }//GEN-LAST:event_displayAllButtonActionPerformed
 
     private void peekTopButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_peekTopButtonActionPerformed
         // Peeking at the front cake without removing it
         if (ovenQueue.isEmpty()) {
-            mainTextArea.append("No cakes in the oven. The oven is EMPTY!");
+            JOptionPane.showMessageDialog(this, "No cakes in the oven to display. The oven is EMPTY!", "Oven empty", JOptionPane.WARNING_MESSAGE);
         } else {
             Cake topCake = (Cake) ovenQueue.peekFrontCake();
-            mainTextArea.append("Top cake in the oven:\n" + topCake);
+            mainTextArea.append("🍰 Front cake added in the oven🔝:\n" + topCake);
+            mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
         }
     }//GEN-LAST:event_peekTopButtonActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
         // Exiting the program 
         System.exit(0);
-        mainTextArea.append("Exiting the program . . .");
     }//GEN-LAST:event_exitButtonActionPerformed
 
     private void peekLastButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_peekLastButtonActionPerformed
         // Peeking at the last cake without removing it
         if (ovenQueue.isEmpty()) {
-            mainTextArea.append("No cakes in the oven. The oven is EMPTY!");
+            JOptionPane.showMessageDialog(this, "No cakes in the oven to display. The oven is EMPTY!", "Oven empty", JOptionPane.WARNING_MESSAGE);
         } else {
             Cake lastCake = (Cake) ovenQueue.peekLastCake();
-            mainTextArea.append("Last cake added in the oven:\n" + lastCake);
+            mainTextArea.append("🍰 Last cake added in the oven 🔚:\n" + lastCake);
+            mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
         }
     }//GEN-LAST:event_peekLastButtonActionPerformed
 
@@ -538,24 +538,27 @@ public class CakeGUI extends javax.swing.JFrame {
         if (!selectedCakeName.equalsIgnoreCase("Select a Cake") && !selectedCakeName.trim().isEmpty()) {
             Cake foundCake = (Cake) ovenQueue.findCakeByName(selectedCakeName.trim());
             if (foundCake != null) {
-                mainTextArea.append("Cake found by name: \n" + foundCake);
+                mainTextArea.append("🔍 Cake found by name: \n" + foundCake);
+                mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
             } else {
-                mainTextArea.append("No cake found with the name: " + selectedCakeName);
+                mainTextArea.append("🚫No cake found with the name: " + selectedCakeName);
+                mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
             }
         } else {
-            JOptionPane.showMessageDialog(this,"Please select a cak name to search", "Input error!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this,"Please select a cake name to search", "Selection input error!", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_searchByNameButtonActionPerformed
 
     private void clearOvenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearOvenButtonActionPerformed
         // Clearing all cakes from the oven
         if (ovenQueue.isEmpty()) {
-            mainTextArea.append("No cakes to clear in the oven. The oven is EMPTY! \n");
+            JOptionPane.showMessageDialog(this, "No cakes in the oven to empty. The oven is EMPTY!", "Oven empty", JOptionPane.WARNING_MESSAGE);
         } else {
             // Clearing the queue if the oven isn't empty
             ovenQueue.emptyOven();
             // Clearing any output text
-            mainTextArea.append("The oven has been cleared. All cakes removed.\n");
+            mainTextArea.append("🎂 The oven has been cleared. All cakes removed.");
+            mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
         }
     }//GEN-LAST:event_clearOvenButtonActionPerformed
 
@@ -570,72 +573,81 @@ public class CakeGUI extends javax.swing.JFrame {
             if (removedCake != null) {
                 boolean found = ovenQueue.removeCakeByName(selectedCakeName.trim());
                 if (found) {
-                    mainTextArea.append("Cake removed by name:\n" + removedCake);
+                    mainTextArea.append("🔠 Cake removed by name :\n" + removedCake);
+                    mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
                 } else {
-                    mainTextArea.append("Error while removing the cake. \n");
+                    mainTextArea.append("⚠️ Error while removing the cake.");
+                    mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
                 }
             } else {
-                mainTextArea.append("No cake found with the name: \n" + cakeName);
+                mainTextArea.append("🚫 No cake found with the name: " + selectedCakeName);
+                mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
             }
         } else {
-            JOptionPane.showMessageDialog(this, "Please select a cake name to remove.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Please select a cake name to remove.", "Selection input error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_removeByNameButtonActionPerformed
 
     private void reportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportButtonActionPerformed
         // Generating and displaying a report of all cakes
         if (ovenQueue.isEmpty()) {
-            mainTextArea.append("No cakes in the oven to report. The oven is EMPTY! \n");
+            JOptionPane.showMessageDialog(this,"No cakes in the oven to report. The oven is EMPTY!", "Oven empty", JOptionPane.ERROR_MESSAGE);
         } else {
             // Get the report text from the queue
             String inventoryReport = ovenQueue.getReport();
             // Display it in the main text area
-            mainTextArea.setText("=== Oven Report ===\n" + inventoryReport + "\n");
+            mainTextArea.append("📊======== OVEN INVENTORY REPORT ========📊\n" + inventoryReport);
+            mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
         }         
     }//GEN-LAST:event_reportButtonActionPerformed
 
     private void sortByDateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortByDateButtonActionPerformed
         // Sorting cakes by expiry date
         if (ovenQueue.isEmpty()) {
-            mainTextArea.append("No cakes to sort. The oven is EMPTY!");
+            JOptionPane.showMessageDialog(this,"No cakes in the oven to sort. The oven is EMPTY!", "Oven empty", JOptionPane.ERROR_MESSAGE);
         } else {
-            mainTextArea.append("Cakes sorted by expiry date:\n" + ovenQueue.getCakeSortedByExpiry());
+            mainTextArea.append("📅 Cakes sorted by expiry date:\n" + ovenQueue.getCakeSortedByExpiry());
+            mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
         }
     }//GEN-LAST:event_sortByDateButtonActionPerformed
 
     private void sortByNameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortByNameButtonActionPerformed
         // Sorting cakes by name
         if (ovenQueue.isEmpty()) {
-            mainTextArea.append("No cakes to sort. The oven is EMPTY!");
+            JOptionPane.showMessageDialog(this,"No cakes in the oven to sort. The oven is EMPTY!", "Oven empty", JOptionPane.ERROR_MESSAGE);
         } else {
-            mainTextArea.append("Cakes sorted by name:\n" + ovenQueue.getCakeSortedByName());
+            mainTextArea.append("🔠 Cakes sorted by name:\n" + ovenQueue.getCakeSortedByName());
+            mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
         }
     }//GEN-LAST:event_sortByNameButtonActionPerformed
 
     private void sortByWeightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortByWeightButtonActionPerformed
         // Sorting cakes by weight
         if (ovenQueue.isEmpty()) {
-            mainTextArea.append("No cakes to sort. The oven is EMPTY!");
+            JOptionPane.showMessageDialog(this,"No cakes in the oven to sort. The oven is EMPTY!", "Oven empty", JOptionPane.ERROR_MESSAGE);
         } else {
-            mainTextArea.append("Cakes sorted by expiry date:\n" + ovenQueue.getCakeSortedByWeight());
+            mainTextArea.append("⚖️ Cakes sorted by expiry date:\n" + ovenQueue.getCakeSortedByWeight());
+            mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
         }
     }//GEN-LAST:event_sortByWeightButtonActionPerformed
 
     private void displayExpiringCakebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayExpiringCakebuttonActionPerformed
         // Displaying cakes that are expiring within 3 days
         if (ovenQueue.isEmpty()) {
-            mainTextArea.append("No cakes to filter. The oven is EMPTY!");
+            JOptionPane.showMessageDialog(this,"No cakes in the oven to show. The oven is EMPTY!", "Oven empty", JOptionPane.ERROR_MESSAGE);
         } else {
-            mainTextArea.append("Cakes expiring within 3 days:\n" + ovenQueue.getCakeExpiringSoon(3));
+            mainTextArea.append("⚠️ Cakes expiring within 3 days:\n" + ovenQueue.getCakeExpiringSoon(3));
+            mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
         }
     }//GEN-LAST:event_displayExpiringCakebuttonActionPerformed
 
     private void cakeAgeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cakeAgeButtonActionPerformed
         // Showing the age of each cake in the oven
         if (ovenQueue.isEmpty()) {
-            mainTextArea.append("No cakes in the oven. The oven is EMPTY!");
+            JOptionPane.showMessageDialog(this,"No cakes in the oven to show. The oven is EMPTY!", "Oven empty", JOptionPane.ERROR_MESSAGE);
         } else {
-            mainTextArea.append("Cake ages (in days):\n" + ovenQueue.getCakeAges());
+            mainTextArea.append("📆 Cake ages (in days):\n" + ovenQueue.getCakeAges());
+            mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
         }
     }//GEN-LAST:event_cakeAgeButtonActionPerformed
 
@@ -643,11 +655,11 @@ public class CakeGUI extends javax.swing.JFrame {
         // Generating and adding a random cake to the oven
         if (ovenQueue.isFull()) {
             JOptionPane.showMessageDialog(this, "Oven is FULL! Remove a cake first.", "Oven FULL!", JOptionPane.WARNING_MESSAGE);
-            return;
         } else{
             Cake randomCake = (Cake) ovenQueue.generateRandomCake();
             ovenQueue.addCake(randomCake);
-            mainTextArea.append("Random cake added.\n" + ovenQueue.peekLastCake());
+            mainTextArea.append("🎲 Random cake added.\n" + ovenQueue.peekLastCake());
+            mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
         }  
     }//GEN-LAST:event_randomButtonActionPerformed
 
@@ -656,7 +668,7 @@ public class CakeGUI extends javax.swing.JFrame {
         // Regular expression to check if the date is in the correct format YYYY-MM-DD
         String regex = "^(\\d{4})-(\\d{2})-(\\d{2})$";
         if (!expiryDate.matches(regex)) { // If the date doesn't match the format
-            JOptionPane.showMessageDialog(this, "Invalid date format. Please use YYYY-MM-DD.", "Date Format Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Invalid date format. \nPlease use YYYY-MM-DD.", "Date format error", JOptionPane.ERROR_MESSAGE);
             return false; // Returning false for invalid format
         }
 
@@ -674,7 +686,7 @@ public class CakeGUI extends javax.swing.JFrame {
 
             // Check if the year is within a valid range (between 1000 and 9999)
             if (year < 1000 || year > 9999) {
-                JOptionPane.showMessageDialog(this, "Invalid year. Please enter a valid year (YYYY).", "Date Format Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Invalid year. Please enter a valid year (YYYY).", "Date format error", JOptionPane.ERROR_MESSAGE);
                 return false; // Returning false if the year is out of range
             }
 
@@ -686,13 +698,13 @@ public class CakeGUI extends javax.swing.JFrame {
 
             // Checking if the best-before date is in the past
             if (bestBefore.before(timePlaced)) {
-                JOptionPane.showMessageDialog(this, "Best-before date cannot be in the past.", "Date Format Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Best before date cannot be in the past.", "Date format error", JOptionPane.ERROR_MESSAGE);
                 return false; // Returning false if the date is before today
             }
 
             // Check if the best-before date is more than two weeks from today
             if (bestBefore.after(twoWeeksFromNow)) {
-                JOptionPane.showMessageDialog(this, "Best-before date must be within two weeks from today.", "Date Format Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Best before date must be within two weeks from today.", "Date format error", JOptionPane.ERROR_MESSAGE);
                 return false; // Return false if the date is too far in the future
             }
 
@@ -700,7 +712,7 @@ public class CakeGUI extends javax.swing.JFrame {
             return true;
 
         } catch (HeadlessException | NumberFormatException | ParseException e) { // Any exceptions during date conversion
-            JOptionPane.showMessageDialog(this, "Invalid date. Please use YYYY-MM-DD.", "Date Format Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Invalid date. Please use YYYY-MM-DD.", "Date format error", JOptionPane.ERROR_MESSAGE);
             return false; // Returning false if an exception occurs
         }
     }
@@ -708,7 +720,10 @@ public class CakeGUI extends javax.swing.JFrame {
     // Validating if the cake weight is a valid positive number
     private boolean isValidCakeWeight(int cakeWeight) {
         if (cakeWeight <= 0) { // Checking if the weight is zero or negative
-            JOptionPane.showMessageDialog(this, "Cake weight must be a positive number.", "Weight Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Cake weight must be a positive number.", "Weight input error", JOptionPane.ERROR_MESSAGE);
+            return false; // Returning false if the weight is not a positive number
+        } else if (cakeWeight < 100 || cakeWeight > 3000) { // Checking if the weight range is between 100 to 3000
+            JOptionPane.showMessageDialog(this, "Cake weight must be within 100 to 3000g.", "Weight input error", JOptionPane.ERROR_MESSAGE);
             return false; // Returning false if the weight is not a positive number
         }
         return true; // Returning true if the weight is a valid number
@@ -719,7 +734,7 @@ public class CakeGUI extends javax.swing.JFrame {
 
         // Check if the default option or no option is selected
         if (selectedCakeName.equalsIgnoreCase("Select a Cake")) { //if no cake name is selected
-            JOptionPane.showMessageDialog(this, "Please select a valid cake name.", "Selection Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Please select a valid cake name.", "Selection input error", JOptionPane.ERROR_MESSAGE);
             return false;
         }
 
