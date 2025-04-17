@@ -1,21 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+// Package declaration for all cake-related classes
 package cakeapp;
 
 /**
- *
+ * Main class to publish the CakeApp GUI application. 
+ * Contains the main method that initializes and displays the GUI.
  * @author egshi
  */
 public class CakeAppGUI {
-       /**
-     * @param args the command line arguments
-     */
+    
+    // Main method to make the GUI visible to the user
     public static void main(String[] args) {
-        // TODO code application logic here
+        // Creating an instance of the CakeGUI class to initialize
         CakeGUI guicakeapp = new CakeGUI();
-        
-        guicakeapp.setVisible(true);
+        // Setting the GUI to be visible and interactive
+        guicakeapp.setVisible(true); 
     }
 }
