@@ -1,6 +1,8 @@
 // Package declaration for all cake-related classes
 package cakeapp;
 
+import java.util.List;
+
 /**
  * CakeQueueInterface defines methods for managing a queue of cakes.
  * Any class implementing this interface has implementations
@@ -18,4 +20,15 @@ public interface CakeQueueInterface {
     public Object removeCake(); // Removing and returning the cake at the front of the queue
     public Object peekFrontCake(); // Returning the cake at the front without removing it
     public String displayCakes(); // Returning a string listing all cakes in the queue
+    public Object peekLastCake(); // Returning the cake in the end of the oven
+    public Object findCakeByName(String name); // Searching a cake by it's name and returning it's information
+    public boolean removeCakeByName(String name); // Removing a cake by name
+    public void clearOven(); // Removing all the cakes in the oven/queue
+    public String getReport(); // Returning total number of cakes and combined weight
+    public List<Object> getCakeSortedByExpiry(); // Returning cakes sorted by it's best before date
+    public List<Object> getCakeSortedByName(); // Returning cakes sorted by name
+    public List<Object> getCakeSortedByWeight(); // Returning cakes sorted by weight
+    public List<Object> getCakeExpiringSoon(int days); // Returning cakes expiring within the next 3 days
+    public String getCakeAges(); // Returning how many days each cake's been in the oven
+    public Object generateRandomCake(); //Generating random cake for testing and returning
 }
