@@ -13,6 +13,7 @@ package cakeapp;
  */
 
 // Importing essential classes for date formatting
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -36,6 +37,18 @@ public class Cake {
     private String getCurrentTime() {
         SimpleDateFormat simpleDateFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return simpleDateFormatter.format(new Date()); // Returning the formatted current time
+    }
+    
+    // Converting a string date to a Date object for sorting/comparison
+    public Date getExpiryAsDate() throws ParseException {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        return format.parse(expiryDate);
+    }
+
+    // Converting oven entry time to Date for age calculation
+    public Date getOvenEntryAsDate() throws ParseException {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        return format.parse(ovenEntryTime);
     }
 
     // toString method to display the cake's information 
