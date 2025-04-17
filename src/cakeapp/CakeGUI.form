@@ -153,8 +153,8 @@
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="cakeNameBox1" max="32767" attributes="0"/>
-                                          <Component id="cakeNameBox2" min="-2" pref="127" max="-2" attributes="0"/>
+                                          <Component id="searchNameBox" max="32767" attributes="0"/>
+                                          <Component id="removeNameBox" min="-2" pref="127" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Component id="sortByDateButton" alignment="1" max="32767" attributes="0"/>
@@ -242,11 +242,11 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="searchByNameButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="cakeNameBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="searchNameBox" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="cakeNameBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="removeNameBox" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="removeByNameButton" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="displayExpiringCakebutton" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
@@ -397,7 +397,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Welcome to the delightful Java application for managin cake orders with oven magic!"/>
+        <Property name="text" type="java.lang.String" value="Welcome to the delightful Java application for managing cake orders with oven magic!"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
@@ -412,7 +412,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="peekLastButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="5. View the last cake in the oven"/>
+        <Property name="text" type="java.lang.String" value="5. View the last cake added in the oven"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="peekLastButtonActionPerformed"/>
@@ -498,7 +498,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="randomButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JComboBox" name="cakeNameBox1">
+    <Component class="javax.swing.JComboBox" name="searchNameBox">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -513,7 +513,7 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="cakeNameBox2">
+    <Component class="javax.swing.JComboBox" name="removeNameBox">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">

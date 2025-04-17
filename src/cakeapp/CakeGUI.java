@@ -4,6 +4,8 @@
  */
 package cakeapp;
 
+import java.awt.HeadlessException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
@@ -18,21 +20,42 @@ public class CakeGUI extends javax.swing.JFrame {
      * Creates new form CakeGUI
      */
     
-    private CakeQueueInterface ovenQueue = new CakeQueue();
+    private final CakeQueueInterface ovenQueue = new CakeQueue();
     public CakeGUI() {
         initComponents();
         initializeCakeNameBox();
-        
-       
+        initializeSearchNameBox();
+        initializeRemoveNameBox();
     }
     
     private void initializeCakeNameBox(){
         cakeNameBox.removeAllItems();
+        cakeNameBox.addItem("Select a cake");
         cakeNameBox.addItem("Pineapple cake");
         cakeNameBox.addItem("Strawberry cake");
         cakeNameBox.addItem("Chocolate cake");
         cakeNameBox.addItem("Vanilla cake");
         cakeNameBox.addItem("Plain cake");
+    }
+    
+    private void initializeSearchNameBox(){
+        searchNameBox.removeAllItems();
+        searchNameBox.addItem("Select a cake");
+        searchNameBox.addItem("Pineapple cake");
+        searchNameBox.addItem("Strawberry cake");
+        searchNameBox.addItem("Chocolate cake");
+        searchNameBox.addItem("Vanilla cake");
+        searchNameBox.addItem("Plain cake");
+    }
+
+    private void initializeRemoveNameBox(){
+        removeNameBox.removeAllItems();
+        removeNameBox.addItem("Select a cake");
+        removeNameBox.addItem("Pineapple cake");
+        removeNameBox.addItem("Strawberry cake");
+        removeNameBox.addItem("Chocolate cake");
+        removeNameBox.addItem("Vanilla cake");
+        removeNameBox.addItem("Plain cake");
     }
 
 
@@ -80,8 +103,8 @@ public class CakeGUI extends javax.swing.JFrame {
         displayExpiringCakebutton = new javax.swing.JButton();
         cakeAgeButton = new javax.swing.JButton();
         randomButton = new javax.swing.JButton();
-        cakeNameBox1 = new javax.swing.JComboBox<>();
-        cakeNameBox2 = new javax.swing.JComboBox<>();
+        searchNameBox = new javax.swing.JComboBox<>();
+        removeNameBox = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
 
         jCheckBoxMenuItem1.setSelected(true);
@@ -172,13 +195,13 @@ public class CakeGUI extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
         jLabel2.setText("MAIN MENU SECTION");
 
-        jLabel4.setText("Welcome to the delightful Java application for managin cake orders with oven magic!");
+        jLabel4.setText("Welcome to the delightful Java application for managing cake orders with oven magic!");
 
         jLabel1.setText("1. Add a cake section");
 
         jLabel5.setText("OTHER OPERATIONS");
 
-        peekLastButton.setText("5. View the last cake in the oven");
+        peekLastButton.setText("5. View the last cake added in the oven");
         peekLastButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 peekLastButtonActionPerformed(evt);
@@ -255,9 +278,9 @@ public class CakeGUI extends javax.swing.JFrame {
             }
         });
 
-        cakeNameBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        searchNameBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        cakeNameBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        removeNameBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel6.setText("Oven operation output:");
 
@@ -321,8 +344,8 @@ public class CakeGUI extends javax.swing.JFrame {
                                                 .addGap(0, 0, Short.MAX_VALUE)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(cakeNameBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(cakeNameBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(searchNameBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(removeNameBox, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addComponent(sortByDateButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -391,10 +414,10 @@ public class CakeGUI extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                             .addComponent(searchByNameButton)
-                                            .addComponent(cakeNameBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(searchNameBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(cakeNameBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(removeNameBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(removeByNameButton)
                                             .addComponent(displayExpiringCakebutton)))
                                     .addGroup(layout.createSequentialGroup()
@@ -426,13 +449,13 @@ public class CakeGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-        // TODO add your handling code here:
+        // Try and catch to validate user input
         try {
             String cakeName = cakeNameBox.getSelectedItem().toString();
             int cakeWeight = Integer.parseInt(weightTextField.getText());
             String expiryDate = expiryDateTextField.getText();
             
-            // Validate inputs
+            // Validating input fields / name, weight, expiry date before creating a new cake
             if (!isValidCakeSelection() || !isValidCakeWeight (cakeWeight) || !isValidExpiryDate (expiryDate)) {
                 return; // If any of the validation fails, can't go to the next process
             }
@@ -441,31 +464,35 @@ public class CakeGUI extends javax.swing.JFrame {
             Cake newCake = new Cake (cakeName, cakeWeight, expiryDate);
             if (ovenQueue.isFull()) {
                 JOptionPane.showMessageDialog(this, "Oven is FULL! Please remove a cake before adding a new one.", "Oven Full", JOptionPane.WARNING_MESSAGE);
-                return;
+                return; // Exiting if any validation fails
             }
+            // Adding a new cake to the oven queue
             ovenQueue.addCake(newCake);
             mainTextArea.append("Added cake:\n" + newCake);
             JOptionPane.showMessageDialog(this, "Cake added to the oven successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            
+            // Clearing input fields after adding
             clearInputs();
+            
             } catch (NumberFormatException e) {
+                // Showing error when parsing the weight fails
                 JOptionPane.showMessageDialog(this, "Please enter a valid number for the weight.", "Input Error", JOptionPane.ERROR_MESSAGE);
             }
-//        JOptionPane.showMessageDialog(this, "Invalid weight. Please enter a value between 1 and 2000 grams.", "Input Error", JOptionPane.ERROR_MESSAGE);
-
-        
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void removeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeButtonActionPerformed
+        // Removing the front cake if the oven is not empty
         if (ovenQueue.isEmpty()) {
             JOptionPane.showMessageDialog(this, "No cakes to remove. The oven is EMPTY!", "Oven Empty", JOptionPane.WARNING_MESSAGE);
         } else {
             Cake removedCake = (Cake) ovenQueue.removeCake();
-            mainTextArea.append("Removed cake:\n" + removedCake);
+            mainTextArea.append("Removed cake:\n" + removedCake); // Displaying the removed cake details
         }
     }//GEN-LAST:event_removeButtonActionPerformed
 
     private void displayAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayAllButtonActionPerformed
-        if (ovenQueue.isEmpty()) {
+        // Displaying all cakes in the oven
+        if (ovenQueue.isEmpty()) { 
             mainTextArea.append("No cakes in the oven. The oven is EMPTY!");
         } else {
             mainTextArea.append(ovenQueue.displayCakes());
@@ -473,6 +500,7 @@ public class CakeGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_displayAllButtonActionPerformed
 
     private void peekTopButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_peekTopButtonActionPerformed
+        // Peeking at the front cake without removing it
         if (ovenQueue.isEmpty()) {
             mainTextArea.append("No cakes in the oven. The oven is EMPTY!");
         } else {
@@ -482,52 +510,139 @@ public class CakeGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_peekTopButtonActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
+        // Exiting the program 
         System.exit(0);
         mainTextArea.append("Exiting the program . . .");
     }//GEN-LAST:event_exitButtonActionPerformed
 
     private void peekLastButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_peekLastButtonActionPerformed
-        // TODO add your handling code here:
+        // Peeking at the last cake without removing it
+        if (ovenQueue.isEmpty()) {
+            mainTextArea.append("No cakes in the oven. The oven is EMPTY!");
+        } else {
+            Cake lastCake = (Cake) ovenQueue.peekLastCake();
+            mainTextArea.append("Last cake added in the oven:\n" + lastCake);
+        }
     }//GEN-LAST:event_peekLastButtonActionPerformed
 
     private void searchByNameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchByNameButtonActionPerformed
-        // TODO add your handling code here:
+        // Searching for a cake by name from the name selection box
+        String cakeName = (String) searchNameBox.getSelectedItem();
+        
+        if (cakeName != null && !cakeName.trim().isEmpty()) {
+            Cake foundCake = (Cake) ovenQueue.findCakeByName(cakeName.trim());
+            if (foundCake != null) {
+                mainTextArea.append("Cake found by name: \n" + foundCake);
+            } else {
+                mainTextArea.append("No cake found with the name: " + cakeName);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this,"Please select a cak name to search", "Input error!", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_searchByNameButtonActionPerformed
 
     private void clearOvenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearOvenButtonActionPerformed
-        // TODO add your handling code here:
+        // Clearing all cakes from the oven
+        if (ovenQueue.isEmpty()) {
+            mainTextArea.append("No cakes to clear in the oven. The oven is EMPTY! \n");
+        } else {
+            // Clearing the queue if the oven isn't empty
+            ovenQueue.emptyOven();
+            // Clearing any output text
+            mainTextArea.append("The oven has been cleared. All cakes removed.\n");
+        }
     }//GEN-LAST:event_clearOvenButtonActionPerformed
 
     private void removeByNameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeByNameButtonActionPerformed
-        // TODO add your handling code here:
+        // Removing a cake by its name
+        String cakeName = (String) removeNameBox.getSelectedItem();
+
+        if (cakeName != null && !cakeName.trim().isEmpty()) {
+            
+            Cake removedCake = (Cake) ovenQueue.findCakeByName(cakeName.trim());
+            
+            if (removedCake != null) {
+                boolean found = ovenQueue.removeCakeByName(cakeName.trim());
+                if (found) {
+                    mainTextArea.append("Cake removed by name:\n" + removedCake);
+                } else {
+                    mainTextArea.append("Error while removing the cake. \n");
+                }
+            } else {
+                mainTextArea.append("No cake found with the name: \n" + cakeName);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Please select a cake name to remove.", "Input Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_removeByNameButtonActionPerformed
 
     private void reportButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportButtonActionPerformed
-        // TODO add your handling code here:
+        // Generating and displaying a report of all cakes
+        if (ovenQueue.isEmpty()) {
+            mainTextArea.append("No cakes in the oven to report. The oven is EMPTY! \n");
+        } else {
+            // Get the report text from the queue
+            String inventoryReport = ovenQueue.getReport();
+            // Display it in the main text area
+            mainTextArea.setText("=== Oven Report ===\n" + inventoryReport + "\n");
+        }         
     }//GEN-LAST:event_reportButtonActionPerformed
 
     private void sortByDateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortByDateButtonActionPerformed
-        // TODO add your handling code here:
+        // Sorting cakes by expiry date
+        if (ovenQueue.isEmpty()) {
+            mainTextArea.append("No cakes to sort. The oven is EMPTY!");
+        } else {
+            mainTextArea.append("Cakes sorted by expiry date:\n" + ovenQueue.getCakeSortedByExpiry());
+        }
     }//GEN-LAST:event_sortByDateButtonActionPerformed
 
     private void sortByNameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortByNameButtonActionPerformed
-        // TODO add your handling code here:
+        // Sorting cakes by name
+        if (ovenQueue.isEmpty()) {
+            mainTextArea.append("No cakes to sort. The oven is EMPTY!");
+        } else {
+            mainTextArea.append("Cakes sorted by name:\n" + ovenQueue.getCakeSortedByName());
+        }
     }//GEN-LAST:event_sortByNameButtonActionPerformed
 
     private void sortByWeightButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortByWeightButtonActionPerformed
-        // TODO add your handling code here:
+        // Sorting cakes by weight
+        if (ovenQueue.isEmpty()) {
+            mainTextArea.append("No cakes to sort. The oven is EMPTY!");
+        } else {
+            mainTextArea.append("Cakes sorted by expiry date:\n" + ovenQueue.getCakeSortedByWeight());
+        }
     }//GEN-LAST:event_sortByWeightButtonActionPerformed
 
     private void displayExpiringCakebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayExpiringCakebuttonActionPerformed
-        // TODO add your handling code here:
+        // Displaying cakes that are expiring within 3 days
+        if (ovenQueue.isEmpty()) {
+            mainTextArea.append("No cakes to filter. The oven is EMPTY!");
+        } else {
+            mainTextArea.append("Cakes expiring within 3 days:\n" + ovenQueue.getCakeExpiringSoon(3));
+        }
     }//GEN-LAST:event_displayExpiringCakebuttonActionPerformed
 
     private void cakeAgeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cakeAgeButtonActionPerformed
-        // TODO add your handling code here:
+        // Showing the age of each cake in the oven
+        if (ovenQueue.isEmpty()) {
+            mainTextArea.append("No cakes in the oven. The oven is EMPTY!");
+        } else {
+            mainTextArea.append("Cake ages (in days):\n" + ovenQueue.getCakeAges());
+        }
     }//GEN-LAST:event_cakeAgeButtonActionPerformed
 
     private void randomButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_randomButtonActionPerformed
-        // TODO add your handling code here:
+        // Generating and adding a random cake to the oven
+        if (ovenQueue.isFull()) {
+            JOptionPane.showMessageDialog(this, "Oven is FULL! Remove a cake first.", "Oven FULL!", JOptionPane.WARNING_MESSAGE);
+            return;
+        } else{
+            Cake randomCake = (Cake) ovenQueue.generateRandomCake();
+            ovenQueue.addCake(randomCake);
+            mainTextArea.append("Random cake added.\n" + ovenQueue.peekFrontCake());
+        }  
     }//GEN-LAST:event_randomButtonActionPerformed
 
     // Validating if the best-before date is in the correct format and within the required range
@@ -578,7 +693,7 @@ public class CakeGUI extends javax.swing.JFrame {
             // If all checks pass, return true indicating a valid expiry date
             return true;
 
-        } catch (Exception e) { // Any exceptions during date conversion
+        } catch (HeadlessException | NumberFormatException | ParseException e) { // Any exceptions during date conversion
             JOptionPane.showMessageDialog(this, "Invalid date. Please use YYYY-MM-DD.", "Date Format Error", JOptionPane.ERROR_MESSAGE);
             return false; // Returning false if an exception occurs
         }
@@ -615,29 +730,6 @@ public class CakeGUI extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     private void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CakeGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CakeGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CakeGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CakeGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -646,14 +738,13 @@ public class CakeGUI extends javax.swing.JFrame {
         });
     }
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Title;
     private javax.swing.JButton addButton;
     private javax.swing.JButton cakeAgeButton;
     private javax.swing.JLabel cakeName;
     private javax.swing.JComboBox<String> cakeNameBox;
-    private javax.swing.JComboBox<String> cakeNameBox1;
-    private javax.swing.JComboBox<String> cakeNameBox2;
     private javax.swing.JLabel cakeWieght;
     private javax.swing.JButton clearOvenButton;
     private javax.swing.JButton displayAllButton;
@@ -679,8 +770,10 @@ public class CakeGUI extends javax.swing.JFrame {
     private javax.swing.JButton randomButton;
     private javax.swing.JButton removeButton;
     private javax.swing.JButton removeByNameButton;
+    private javax.swing.JComboBox<String> removeNameBox;
     private javax.swing.JButton reportButton;
     private javax.swing.JButton searchByNameButton;
+    private javax.swing.JComboBox<String> searchNameBox;
     private javax.swing.JButton sortByDateButton;
     private javax.swing.JButton sortByNameButton;
     private javax.swing.JButton sortByWeightButton;
