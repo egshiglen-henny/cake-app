@@ -23,7 +23,7 @@ public interface CakeQueueInterface {
     public Object peekLastCake(); // Returning the cake in the end of the oven
     public Object findCakeByName(String name); // Searching a cake by it's name and returning it's information
     public boolean removeCakeByName(String name); // Removing a cake by name
-    public void clearOven(); // Removing all the cakes in the oven/queue
+    public void emptyOven(); // Removing all the cakes in the oven/queue
     public String getReport(); // Returning total number of cakes and combined weight
     public List<Object> getCakeSortedByExpiry(); // Returning cakes sorted by it's best before date
     public List<Object> getCakeSortedByName(); // Returning cakes sorted by name
