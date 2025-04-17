@@ -21,26 +21,30 @@ public class CakeGUI extends javax.swing.JFrame {
      */
     
     private final CakeQueueInterface ovenQueue = new CakeQueue();
+    
+    // Constructor for the CakeGUI class
     public CakeGUI() {
-        initComponents();
-        initializeCakeNameBox();
-        initializeSearchNameBox();
-        initializeRemoveNameBox();
+        initComponents(); 
+        initializeCakeNameBox(); // Populating the cake selection combo box for adding cakes
+        initializeSearchNameBox(); // Populates the combo box for searching cakes
+        initializeRemoveNameBox();  // Populates the combo box for removing cakes
     }
     
+    // Initializing the combo box for adding cakes with cake name options
     private void initializeCakeNameBox(){
-        cakeNameBox.removeAllItems();
-        cakeNameBox.addItem("Select a cake");
-        cakeNameBox.addItem("Pineapple cake");
-        cakeNameBox.addItem("Strawberry cake");
-        cakeNameBox.addItem("Chocolate cake");
-        cakeNameBox.addItem("Vanilla cake");
-        cakeNameBox.addItem("Plain cake");
+        cakeNameBox.removeAllItems(); // Clearing existing items in the combo box
+        cakeNameBox.addItem("Select a cake"); // Default prompt item
+        cakeNameBox.addItem("Pineapple cake"); // Adding pineapple cake to the list
+        cakeNameBox.addItem("Strawberry cake"); // Adding strawberr cake to the list
+        cakeNameBox.addItem("Chocolate cake"); // Adding chocolate cake to the list
+        cakeNameBox.addItem("Vanilla cake"); // Adding vanilla cake to the list
+        cakeNameBox.addItem("Plain cake"); // Adding plain cake to the list
     }
     
+    // Initializing the combo box for searching cakes by name
     private void initializeSearchNameBox(){
-        searchNameBox.removeAllItems();
-        searchNameBox.addItem("Select a cake");
+        searchNameBox.removeAllItems(); // Clearing existing items in the combo box
+        searchNameBox.addItem("Select a cake"); // Default prompt item
         searchNameBox.addItem("Pineapple cake");
         searchNameBox.addItem("Strawberry cake");
         searchNameBox.addItem("Chocolate cake");
@@ -48,9 +52,10 @@ public class CakeGUI extends javax.swing.JFrame {
         searchNameBox.addItem("Plain cake");
     }
 
+    // Initializing the combo box for removing cakes by name
     private void initializeRemoveNameBox(){
-        removeNameBox.removeAllItems();
-        removeNameBox.addItem("Select a cake");
+        removeNameBox.removeAllItems(); // Clearing existing items in the combo box
+        removeNameBox.addItem("Select a cake"); // Default prompt item
         removeNameBox.addItem("Pineapple cake");
         removeNameBox.addItem("Strawberry cake");
         removeNameBox.addItem("Chocolate cake");
@@ -451,17 +456,18 @@ public class CakeGUI extends javax.swing.JFrame {
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         // Try and catch to validate user input
         try {
-            String cakeName = cakeNameBox.getSelectedItem().toString();
+            
             int cakeWeight = Integer.parseInt(weightTextField.getText());
             String expiryDate = expiryDateTextField.getText();
-            
             // Validating input fields / name, weight, expiry date before creating a new cake
             if (!isValidCakeSelection() || !isValidCakeWeight (cakeWeight) || !isValidExpiryDate (expiryDate)) {
                 return; // If any of the validation fails, can't go to the next process
             }
             
+            String selectedCakeName = cakeNameBox.getSelectedItem().toString();
+
             // Creating a new Cake object
-            Cake newCake = new Cake (cakeName, cakeWeight, expiryDate);
+            Cake newCake = new Cake (selectedCakeName, cakeWeight, expiryDate);
             if (ovenQueue.isFull()) {
                 JOptionPane.showMessageDialog(this, "Oven is FULL! Please remove a cake before adding a new one.", "Oven Full", JOptionPane.WARNING_MESSAGE);
                 return; // Exiting if any validation fails
@@ -527,14 +533,14 @@ public class CakeGUI extends javax.swing.JFrame {
 
     private void searchByNameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchByNameButtonActionPerformed
         // Searching for a cake by name from the name selection box
-        String cakeName = (String) searchNameBox.getSelectedItem();
+        String selectedCakeName = (String) searchNameBox.getSelectedItem();
         
-        if (cakeName != null && !cakeName.trim().isEmpty()) {
-            Cake foundCake = (Cake) ovenQueue.findCakeByName(cakeName.trim());
+        if (!selectedCakeName.equalsIgnoreCase("Select a Cake") && !selectedCakeName.trim().isEmpty()) {
+            Cake foundCake = (Cake) ovenQueue.findCakeByName(selectedCakeName.trim());
             if (foundCake != null) {
                 mainTextArea.append("Cake found by name: \n" + foundCake);
             } else {
-                mainTextArea.append("No cake found with the name: " + cakeName);
+                mainTextArea.append("No cake found with the name: " + selectedCakeName);
             }
         } else {
             JOptionPane.showMessageDialog(this,"Please select a cak name to search", "Input error!", JOptionPane.ERROR_MESSAGE);
@@ -555,14 +561,14 @@ public class CakeGUI extends javax.swing.JFrame {
 
     private void removeByNameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeByNameButtonActionPerformed
         // Removing a cake by its name
-        String cakeName = (String) removeNameBox.getSelectedItem();
+        String selectedCakeName = (String) removeNameBox.getSelectedItem();
 
-        if (cakeName != null && !cakeName.trim().isEmpty()) {
+        if (!selectedCakeName.equalsIgnoreCase("Select a Cake") && !selectedCakeName.trim().isEmpty()) {
             
-            Cake removedCake = (Cake) ovenQueue.findCakeByName(cakeName.trim());
+            Cake removedCake = (Cake) ovenQueue.findCakeByName(selectedCakeName.trim());
             
             if (removedCake != null) {
-                boolean found = ovenQueue.removeCakeByName(cakeName.trim());
+                boolean found = ovenQueue.removeCakeByName(selectedCakeName.trim());
                 if (found) {
                     mainTextArea.append("Cake removed by name:\n" + removedCake);
                 } else {
@@ -641,7 +647,7 @@ public class CakeGUI extends javax.swing.JFrame {
         } else{
             Cake randomCake = (Cake) ovenQueue.generateRandomCake();
             ovenQueue.addCake(randomCake);
-            mainTextArea.append("Random cake added.\n" + ovenQueue.peekFrontCake());
+            mainTextArea.append("Random cake added.\n" + ovenQueue.peekLastCake());
         }  
     }//GEN-LAST:event_randomButtonActionPerformed
 
@@ -709,10 +715,10 @@ public class CakeGUI extends javax.swing.JFrame {
     }
     // Validating if the cake name is selected
     private boolean isValidCakeSelection() {
-        String selectedCake = (String) cakeNameBox.getSelectedItem(); 
+        String selectedCakeName = (String) cakeNameBox.getSelectedItem(); 
 
         // Check if the default option or no option is selected
-        if (selectedCake == null || selectedCake.equals("Select a Cake")) { //if no cake name is selected
+        if (selectedCakeName.equalsIgnoreCase("Select a Cake")) { //if no cake name is selected
             JOptionPane.showMessageDialog(this, "Please select a valid cake name.", "Selection Error", JOptionPane.ERROR_MESSAGE);
             return false;
         }
