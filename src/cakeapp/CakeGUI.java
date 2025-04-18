@@ -34,33 +34,33 @@ public class CakeGUI extends javax.swing.JFrame {
     private void initializeCakeNameBox(){
         cakeNameBox.removeAllItems(); // Clearing existing items in the combo box
         cakeNameBox.addItem("Select a cake"); // Default prompt item
-        cakeNameBox.addItem("🍍 Pineapple cake"); // Adding pineapple cake to the list
-        cakeNameBox.addItem("🍓 Strawberry cake"); // Adding strawberr cake to the list
-        cakeNameBox.addItem("🍫 Chocolate cake"); // Adding chocolate cake to the list
-        cakeNameBox.addItem("🍦 Vanilla cake"); // Adding vanilla cake to the list
-        cakeNameBox.addItem("🍰 Plain cake"); // Adding plain cake to the list
+        cakeNameBox.addItem("Pineapple cake"); // Adding pineapple cake to the list
+        cakeNameBox.addItem("Strawberry cake"); // Adding strawberr cake to the list
+        cakeNameBox.addItem("Chocolate cake"); // Adding chocolate cake to the list
+        cakeNameBox.addItem("Vanilla cake"); // Adding vanilla cake to the list
+        cakeNameBox.addItem("Plain cake"); // Adding plain cake to the list
     }
     
     // Initializing the combo box for searching cakes by name
     private void initializeSearchNameBox(){
         searchNameBox.removeAllItems(); // Clearing existing items in the combo box
         searchNameBox.addItem("Select a cake"); // Default prompt item
-        searchNameBox.addItem("🍍 Pineapple cake");
-        searchNameBox.addItem("🍓 Strawberry cake");
-        searchNameBox.addItem("🍫 Chocolate cake");
-        searchNameBox.addItem("🍦 Vanilla cake");
-        searchNameBox.addItem("🍰 Plain cake");
+        searchNameBox.addItem("Pineapple cake");
+        searchNameBox.addItem("Strawberry cake");
+        searchNameBox.addItem("Chocolate cake");
+        searchNameBox.addItem("Vanilla cake");
+        searchNameBox.addItem("Plain cake");
     }
 
     // Initializing the combo box for removing cakes by name
     private void initializeRemoveNameBox(){
         removeNameBox.removeAllItems(); // Clearing existing items in the combo box
         removeNameBox.addItem("Select a cake"); // Default prompt item
-        removeNameBox.addItem("🍍 Pineapple cake");
-        removeNameBox.addItem("🍓 Strawberry cake");
-        removeNameBox.addItem("🍫 Chocolate cake");
-        removeNameBox.addItem("🍦 Vanilla cake");
-        removeNameBox.addItem("🍰 Plain cake");
+        removeNameBox.addItem("Pineapple cake");
+        removeNameBox.addItem("Strawberry cake");
+        removeNameBox.addItem("Chocolate cake");
+        removeNameBox.addItem("Vanilla cake");
+        removeNameBox.addItem("Plain cake");
     }
 
 
@@ -569,7 +569,7 @@ public class CakeGUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "No cakes in the oven to display. The oven is EMPTY!", "Oven empty", JOptionPane.WARNING_MESSAGE);
         } else {
             Cake topCake = (Cake) ovenQueue.peekFrontCake();
-            mainTextArea.append("🍰 Front cake added in the oven🔝:\n" + topCake);
+            mainTextArea.append("🍰 Front cake in the oven🔝:\n" + topCake);
             mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
         }
     }//GEN-LAST:event_peekTopButtonActionPerformed
@@ -585,7 +585,7 @@ public class CakeGUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "No cakes in the oven to display. The oven is EMPTY!", "Oven empty", JOptionPane.WARNING_MESSAGE);
         } else {
             Cake lastCake = (Cake) ovenQueue.peekLastCake();
-            mainTextArea.append("🍰 Last cake added in the oven 🔚:\n" + lastCake);
+            mainTextArea.append("🍰 Last cake in the oven 🔚:\n" + lastCake);
             mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
         }
     }//GEN-LAST:event_peekLastButtonActionPerformed
