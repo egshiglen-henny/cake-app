@@ -10,12 +10,12 @@ package cakeapp;
  */
 
 // Importing ArrayList to store the queue of cakes
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList; 
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
-import java.util.List;
 
 public class CakeQueue implements CakeQueueInterface {
     
@@ -30,46 +30,51 @@ public class CakeQueue implements CakeQueueInterface {
     }
     
     // Checking if the oven is empty
+    @Override
     public boolean isEmpty() {
         // Returning true if the queue has no cakes
         return ovenQueue.isEmpty();
     }
     
     // Checking if the oven is full (max capacity of 5 cakes)
+    @Override
     public boolean isFull() {
         // Returning true if the queue has 5 or more cakes
         return ovenQueue.size() >= MAX_CAPACITY;
     }
 
     // Getting the size of the number of cakes in the oven
+    @Override
     public int size() {
         return ovenQueue.size(); // Returning the size of the queue
     }
     
     // Enqueue(add) a Cake object to the end of the queue
+    @Override
     public void addCake(Object element) {
         // Checking if the object is an instance of Cake
-        if (element instanceof Cake) { 
-            ovenQueue.add((Cake) element);  // Adding Cake object to the queue
+        if (element instanceof Cake cake) { 
+            ovenQueue.add(cake);  // Adding Cake object to the queue
         }
     }
 
     // Dequeue (remove) a Cake object at the front of the queue
+    @Override
     public Object removeCake() {
         return ovenQueue.remove(0);  // Removing and returning the first cake in the queue
-       
-
     }
 
     // Method to display the cake at the front of the queue
+    @Override
     public Object peekFrontCake() {
-        if (ovenQueue.size() > 0) { // Checking if the queue has at least one cake
+        if (!ovenQueue.isEmpty()) { // Checking if the queue has at least one cake
             return ovenQueue.get(0); // Returning the first cake in the queue
         }
         return null; // Returning null if the queue is empty
     }
     
     // Method to display all cakes in the oven (queue)
+    @Override
     public String displayCakes() {
          // Initializing an empty String to build the output
         String string = new String();
@@ -82,100 +87,142 @@ public class CakeQueue implements CakeQueueInterface {
         } else {
             // If not empty, iterate through each Cake in the queue
             while (it.hasNext()) {
+                // Add a new line after each cake
+                string = string.concat("\n🎂");
                 // Add the cake's details to the string
                 string = string.concat(it.next().toString());
-                // Add a new line after each cake
-                string = string.concat("\n");
             }
         }
         return string; // Returning the final list of cakes as string
     }
 
+    @Override
     public Object peekLastCake() {
         if(!ovenQueue.isEmpty()) {
-            return ovenQueue.get(ovenQueue.size() - 1); // Returning the last cake 
+            return ovenQueue.get(ovenQueue.size() - 1); // Returning the last cake added to the queue 
         }
         return null; // If the queue is empty
     }
     
+    @Override
     public Object findCakeByName(String name) {
         for(Cake cake: ovenQueue) {
             if (cake.getCakeName().equalsIgnoreCase(name)) {
                 return cake; // Returning the cake with the matching name
             }
         }
-        return false; // If there was no cake found with that name
+        return null; // If there was no cake found with that name
     }
 
+    @Override
     public boolean removeCakeByName(String name) {
-        for(Cake cake: ovenQueue) {
-            if (cake.getCakeName().equals(name)) {
-                ovenQueue.remove(cake);
-                return true; // Returning true if the cake is found by its name and removing
+        Iterator<Cake> iterator = ovenQueue.iterator(); // Creating an iterator to loop through the queue
+    
+        while (iterator.hasNext()) {
+            Cake cake = iterator.next(); // Get the next cake in the queue
+            if (cake.getCakeName().equalsIgnoreCase(name)) { // Comparing cake name with the input name
+                iterator.remove(); // If the cake is found, remove it from the list
+                return true; // Returning true if the cake was removed
             }
         }
-        return false; // Returning false if no cake was found by that name
+        return false; // If no cake with that name is found, returning false
     }
 
-    public void clearOven() {
+    @Override
+    public void emptyOven() {
         ovenQueue.clear(); // Clearing all the cakes in the oven / queue
     }
 
+    @Override
     public String getReport() {
         int totalWeight = 0;
         for(Cake cake: ovenQueue) {
             totalWeight += cake.getCakeWeight(); // Adding all the cake weights
         }
-        return "Total number of cakes: " + ovenQueue.size() + "\n Combined weight: " + totalWeight + "grams";
+        return "Total number of cakes: " + ovenQueue.size() + "\n Combined weight: " + totalWeight + " g";
     }
 
-    public List<Object> getCakeSortedByExpiry() {
+
+    @Override
+    public String getCakeSortedByName() {
+        ArrayList<Cake> sortedList = new ArrayList<>(ovenQueue); // Copying to avoid modifying the original
+        sortedList.sort((cake1, cake2) -> cake1.getCakeName().compareTo(cake2.getCakeName()));
+
+        StringBuilder builder = new StringBuilder();
+        for (Cake cake : sortedList) {
+            builder.append("\n🎂️ Alphabetical order: ")
+                  .append("\n").append(cake.toString()).append("\n");
+        }
+
+        return builder.toString();
+    }
+
+    @Override
+    public String getCakeSortedByWeight() {
+        ovenQueue.sort((cake1, cake2) -> Integer.compare(cake1.getCakeWeight(), cake2.getCakeWeight()));
+
+        StringBuilder builder = new StringBuilder();
+
+        for (Cake cake : ovenQueue) {
+            builder.append("\n⚖️ Weight: ").append(cake.getCakeWeight()).append(" g")
+                  .append("\n").append(cake.toString()).append("\n");
+        }
+        return builder.toString();
+    }
+
+    
+    @Override
+    public String getCakeSortedByExpiry() {
         ovenQueue.sort((cake1, cake2) -> {
             try {
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                Date date1 = simpleDateFormat.parse(cake1.getExpiryDate());
-                Date date2 = simpleDateFormat.parse(cake2.getExpiryDate());
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                Date date1 = sdf.parse(cake1.getExpiryDate());
+                Date date2 = sdf.parse(cake2.getExpiryDate());
                 return date1.compareTo(date2);
-            } catch (Exception e) {
-                return 0; // Return 0 in case of exception
+            } catch (ParseException e) {
+                return 0;
             }
         });
-        return (List<Object>) (List<?>) ovenQueue;
-    }
 
-    public List<Object> getCakeSortedByName() {
-        ovenQueue.sort((cake1, cake2) -> cake1.getCakeName().compareTo(cake2.getCakeName())); // Sorting by cake name
-        return (List<Object>) (List<?>) ovenQueue;
-    }
-
-
-    public List<Object> getCakeSortedByWeight() {
-        ovenQueue.sort((cake1, cake2) -> Integer.compare(cake1.getCakeWeight(), cake2.getCakeWeight())); // Sorting by cake weight
-        return (List<Object>) (List<?>) ovenQueue;
+        StringBuilder result = new StringBuilder();
+        
+        for (Cake cake : ovenQueue) {
+            result.append("\n🕒 Expiry: ").append(cake.getExpiryDate())
+                  .append("\n").append(cake.toString()).append("\n");
+        }
+        return result.toString();
     }
     
-    public List<Object> getCakeExpiringSoon(int days) {
-        List<Object> expiringCakes = new ArrayList<>();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Date currentDate = new Date(); // Get the current date
+    @Override
+    public String getCakeExpiringSoon(int days) {
+        StringBuilder result = new StringBuilder();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date currentDate = new Date();
+        boolean found = false;
 
         for (Cake cake : ovenQueue) {
             try {
-                Date expiryDate = simpleDateFormat.parse(cake.getExpiryDate());
-                long differenceInMilliSeconds = expiryDate.getTime() - currentDate.getTime(); // Get the difference in milliseconds
-                long daysDifference = differenceInMilliSeconds / (1000 * 60 * 60 * 24); // Convert milliseconds to days
+                Date expiryDate = sdf.parse(cake.getExpiryDate());
+                long diff = expiryDate.getTime() - currentDate.getTime();
+                long daysDiff = diff / (1000 * 60 * 60 * 24);
 
-                if (daysDifference <= days) { // If the cake is expiring soon
-                    expiringCakes.add(cake);
+                if (daysDiff <= days) {
+                    found = true;
+                    result.append("\n⏳ Expiring in ").append(daysDiff).append(" day(s)")
+                          .append("\n").append(cake.toString()).append("\n");
                 }
-            } catch (Exception e) {
-                System.out.println("There has been an error!");;
+            } catch (ParseException e) {
+                result.append("Error parsing date for cake: ").append(cake.getCakeName()).append("\n");
             }
         }
-        return (List<Object>) (List<?>) expiringCakes; // Returning the list of expiring cakes
+
+        if (!found) {
+            return "No cakes expiring within " + days + " days.";
+        }
+        return result.toString();
     }
-
-
+    
+    @Override
     public String getCakeAges() {
         StringBuilder report = new StringBuilder();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -191,18 +238,21 @@ public class CakeQueue implements CakeQueueInterface {
                       .append(" has been in the oven for ")
                       .append(daysDifference)
                       .append(" days.\n");
-            } catch (Exception e) {
+            } catch (ParseException e) {
                 System.out.println("There has been an error!");
             }
         }
         return report.toString(); // Returning the string with cake ages
     }
     
+    @Override
     public Object generateRandomCake() {
-        String[] cakeNames = {"Chocolate Cake", "Vanilla Cake", "Strawberry Cake", "Lemon Cake", "Carrot Cake"};
+        String[] cakeNames = {"Pineapple Cake", "Strawberry Cake", "Chocolate Cake", "Vanilla Cake", "Plain Cake"};
         int randomIndex = (int) (Math.random() * cakeNames.length); // Getting a random cake name
         String randomName = cakeNames[randomIndex];
-        int randomWeight = (int) (Math.random() * 500) + 100; // Random weight between 100 and 600 grams
+        int minWeight = 100;
+        int maxWeight = 3000;
+        int randomWeight = minWeight + (int)(Math.random() * (maxWeight - minWeight + 1));// Random weight between 100 and 3000 grams
         String randomExpiryDate = generateRandomExpiryDate(); // Generating random expiry date
 
         return new Cake(randomName, randomWeight, randomExpiryDate); // Returning a new random cake
@@ -210,7 +260,7 @@ public class CakeQueue implements CakeQueueInterface {
 
     // Helper method to generate a random expiry date
     private String generateRandomExpiryDate() {
-        int randomDaysToAdd = (int) (Math.random() * 30) + 1; // Random number of days to add (1-30 days)
+        int randomDaysToAdd = (int) (Math.random() * 14) + 1; // Random number of days to add (1-14 days)
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.DAY_OF_YEAR, randomDaysToAdd); // Adding random days to current date
         Date expiryDate = cal.getTime();
