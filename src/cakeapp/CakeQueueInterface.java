@@ -25,10 +25,10 @@ public interface CakeQueueInterface {
     public boolean removeCakeByName(String name); // Removing a cake by name
     public void emptyOven(); // Removing all the cakes in the oven/queue
     public String getReport(); // Returning total number of cakes and combined weight
-    public List<Object> getCakeSortedByExpiry(); // Returning cakes sorted by it's best before date
-    public List<Object> getCakeSortedByName(); // Returning cakes sorted by name
-    public List<Object> getCakeSortedByWeight(); // Returning cakes sorted by weight
-    public List<Object> getCakeExpiringSoon(int days); // Returning cakes expiring within the next 3 days
+    public String getCakeSortedByExpiry(); // Returning cakes sorted by it's best before date
+    public String getCakeSortedByName(); // Returning cakes sorted by name
+    public String getCakeSortedByWeight(); // Returning cakes sorted by weight
+    public String getCakeExpiringSoon(int days); // Returning cakes expiring within the next 3 days
     public String getCakeAges(); // Returning how many days each cake's been in the oven
     public Object generateRandomCake(); //Generating random cake for testing and returning
 }
