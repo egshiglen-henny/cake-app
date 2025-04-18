@@ -534,18 +534,21 @@ public class CakeGUI extends javax.swing.JFrame {
     private void searchByNameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchByNameButtonActionPerformed
         // Searching for a cake by name from the name selection box
         String selectedCakeName = (String) searchNameBox.getSelectedItem();
-        
-        if (!selectedCakeName.equalsIgnoreCase("Select a Cake") && !selectedCakeName.trim().isEmpty()) {
-            Cake foundCake = (Cake) ovenQueue.findCakeByName(selectedCakeName.trim());
-            if (foundCake != null) {
-                mainTextArea.append("🔍 Cake found by name: \n" + foundCake);
-                mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
-            } else {
-                mainTextArea.append("🚫No cake found with the name: " + selectedCakeName);
-                mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
-            }
+        if (ovenQueue.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No cakes in the oven to search. The oven is EMPTY!", "Oven empty", JOptionPane.WARNING_MESSAGE);
         } else {
-            JOptionPane.showMessageDialog(this,"Please select a cake name to search", "Selection input error!", JOptionPane.ERROR_MESSAGE);
+            if (!selectedCakeName.equalsIgnoreCase("Select a Cake") && !selectedCakeName.trim().isEmpty()) {
+                Cake foundCake = (Cake) ovenQueue.findCakeByName(selectedCakeName.trim());
+                if (foundCake != null) {
+                    mainTextArea.append("🔍 Cake found by name: \n" + foundCake);
+                    mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
+                } else {
+                    mainTextArea.append("🚫No cake found with the name: " + selectedCakeName);
+                    mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
+                }
+            } else {
+                JOptionPane.showMessageDialog(this,"Please select a cake name to search", "Selection input error!", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }//GEN-LAST:event_searchByNameButtonActionPerformed
 
@@ -565,26 +568,29 @@ public class CakeGUI extends javax.swing.JFrame {
     private void removeByNameButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeByNameButtonActionPerformed
         // Removing a cake by its name
         String selectedCakeName = (String) removeNameBox.getSelectedItem();
+        if (ovenQueue.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No cakes in the oven to remove. The oven is EMPTY!", "Oven empty", JOptionPane.WARNING_MESSAGE);
+        } else {
+            if (!selectedCakeName.equalsIgnoreCase("Select a Cake") && !selectedCakeName.trim().isEmpty()) {
 
-        if (!selectedCakeName.equalsIgnoreCase("Select a Cake") && !selectedCakeName.trim().isEmpty()) {
-            
-            Cake removedCake = (Cake) ovenQueue.findCakeByName(selectedCakeName.trim());
-            
-            if (removedCake != null) {
-                boolean found = ovenQueue.removeCakeByName(selectedCakeName.trim());
-                if (found) {
-                    mainTextArea.append("🔠 Cake removed by name :\n" + removedCake);
-                    mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
+                Cake removedCake = (Cake) ovenQueue.findCakeByName(selectedCakeName.trim());
+
+                if (removedCake != null) {
+                    boolean found = ovenQueue.removeCakeByName(selectedCakeName.trim());
+                    if (found) {
+                        mainTextArea.append("🔠 Cake removed by name :\n" + removedCake);
+                        mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
+                    } else {
+                        mainTextArea.append("⚠️ Error while removing the cake.");
+                        mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
+                    }
                 } else {
-                    mainTextArea.append("⚠️ Error while removing the cake.");
+                    mainTextArea.append("🚫 No cake found with the name: " + selectedCakeName);
                     mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
                 }
             } else {
-                mainTextArea.append("🚫 No cake found with the name: " + selectedCakeName);
-                mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
+                JOptionPane.showMessageDialog(this, "Please select a cake name to remove.", "Selection input error", JOptionPane.ERROR_MESSAGE);
             }
-        } else {
-            JOptionPane.showMessageDialog(this, "Please select a cake name to remove.", "Selection input error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_removeByNameButtonActionPerformed
 
@@ -626,7 +632,7 @@ public class CakeGUI extends javax.swing.JFrame {
         if (ovenQueue.isEmpty()) {
             JOptionPane.showMessageDialog(this,"No cakes in the oven to sort. The oven is EMPTY!", "Oven empty", JOptionPane.ERROR_MESSAGE);
         } else {
-            mainTextArea.append("⚖️ Cakes sorted by expiry date:\n" + ovenQueue.getCakeSortedByWeight());
+            mainTextArea.append("⚖️ Cakes sorted by weight:\n" + ovenQueue.getCakeSortedByWeight());
             mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
         }
     }//GEN-LAST:event_sortByWeightButtonActionPerformed
@@ -636,7 +642,7 @@ public class CakeGUI extends javax.swing.JFrame {
         if (ovenQueue.isEmpty()) {
             JOptionPane.showMessageDialog(this,"No cakes in the oven to show. The oven is EMPTY!", "Oven empty", JOptionPane.ERROR_MESSAGE);
         } else {
-            mainTextArea.append("⚠️ Cakes expiring within 3 days:\n" + ovenQueue.getCakeExpiringSoon(3));
+            mainTextArea.append("⚠️ Cakes expiring within 3 days ⏰:\n" + ovenQueue.getCakeExpiringSoon(3));
             mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
         }
     }//GEN-LAST:event_displayExpiringCakebuttonActionPerformed
@@ -658,7 +664,7 @@ public class CakeGUI extends javax.swing.JFrame {
         } else{
             Cake randomCake = (Cake) ovenQueue.generateRandomCake();
             ovenQueue.addCake(randomCake);
-            mainTextArea.append("🎲 Random cake added.\n" + ovenQueue.peekLastCake());
+            mainTextArea.append("🎲 Random cake added:\n" + ovenQueue.peekLastCake());
             mainTextArea.append("\n🎂--------------------------------------------------------------------🎂\n");
         }  
     }//GEN-LAST:event_randomButtonActionPerformed
