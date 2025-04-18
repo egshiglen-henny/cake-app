@@ -34,33 +34,33 @@ public class CakeGUI extends javax.swing.JFrame {
     private void initializeCakeNameBox(){
         cakeNameBox.removeAllItems(); // Clearing existing items in the combo box
         cakeNameBox.addItem("Select a cake"); // Default prompt item
-        cakeNameBox.addItem("Pineapple cake"); // Adding pineapple cake to the list
-        cakeNameBox.addItem("Strawberry cake"); // Adding strawberr cake to the list
-        cakeNameBox.addItem("Chocolate cake"); // Adding chocolate cake to the list
-        cakeNameBox.addItem("Vanilla cake"); // Adding vanilla cake to the list
-        cakeNameBox.addItem("Plain cake"); // Adding plain cake to the list
+        cakeNameBox.addItem("🍍 Pineapple cake"); // Adding pineapple cake to the list
+        cakeNameBox.addItem("🍓 Strawberry cake"); // Adding strawberr cake to the list
+        cakeNameBox.addItem("🍫 Chocolate cake"); // Adding chocolate cake to the list
+        cakeNameBox.addItem("🍦 Vanilla cake"); // Adding vanilla cake to the list
+        cakeNameBox.addItem("🍰 Plain cake"); // Adding plain cake to the list
     }
     
     // Initializing the combo box for searching cakes by name
     private void initializeSearchNameBox(){
         searchNameBox.removeAllItems(); // Clearing existing items in the combo box
         searchNameBox.addItem("Select a cake"); // Default prompt item
-        searchNameBox.addItem("Pineapple cake");
-        searchNameBox.addItem("Strawberry cake");
-        searchNameBox.addItem("Chocolate cake");
-        searchNameBox.addItem("Vanilla cake");
-        searchNameBox.addItem("Plain cake");
+        searchNameBox.addItem("🍍 Pineapple cake");
+        searchNameBox.addItem("🍓 Strawberry cake");
+        searchNameBox.addItem("🍫 Chocolate cake");
+        searchNameBox.addItem("🍦 Vanilla cake");
+        searchNameBox.addItem("🍰 Plain cake");
     }
 
     // Initializing the combo box for removing cakes by name
     private void initializeRemoveNameBox(){
         removeNameBox.removeAllItems(); // Clearing existing items in the combo box
         removeNameBox.addItem("Select a cake"); // Default prompt item
-        removeNameBox.addItem("Pineapple cake");
-        removeNameBox.addItem("Strawberry cake");
-        removeNameBox.addItem("Chocolate cake");
-        removeNameBox.addItem("Vanilla cake");
-        removeNameBox.addItem("Plain cake");
+        removeNameBox.addItem("🍍 Pineapple cake");
+        removeNameBox.addItem("🍓 Strawberry cake");
+        removeNameBox.addItem("🍫 Chocolate cake");
+        removeNameBox.addItem("🍦 Vanilla cake");
+        removeNameBox.addItem("🍰 Plain cake");
     }
 
 
@@ -111,6 +111,7 @@ public class CakeGUI extends javax.swing.JFrame {
         searchNameBox = new javax.swing.JComboBox<>();
         removeNameBox = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
+        bakerImage = new javax.swing.JLabel();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
@@ -147,15 +148,30 @@ public class CakeGUI extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 102, 204));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        Title.setBackground(new java.awt.Color(255, 255, 255));
+        Title.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        Title.setForeground(new java.awt.Color(182, 32, 224));
         Title.setText("QUEEN BAKERY OVEN MANAGER");
 
         cakeName.setBackground(new java.awt.Color(255, 102, 153));
+        cakeName.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        cakeName.setForeground(new java.awt.Color(255, 79, 203));
         cakeName.setText("Select cake name:");
 
+        cakeWieght.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        cakeWieght.setForeground(new java.awt.Color(255, 79, 203));
         cakeWieght.setText("Enter weight amount (grams):");
 
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 79, 203));
         jLabel3.setText("Enter Best Before Date (YYYY-MM-DD, Max 14 days): ");
 
+        weightTextField.setBackground(new java.awt.Color(250, 232, 255));
+
+        expiryDateTextField.setBackground(new java.awt.Color(250, 232, 255));
+
+        addButton.setBackground(new java.awt.Color(162, 107, 255));
+        addButton.setForeground(new java.awt.Color(255, 255, 255));
         addButton.setText("1. Add cake to the oven ✅");
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,6 +179,8 @@ public class CakeGUI extends javax.swing.JFrame {
             }
         });
 
+        removeButton.setBackground(new java.awt.Color(162, 107, 255));
+        removeButton.setForeground(new java.awt.Color(255, 255, 255));
         removeButton.setText("2. Remove a cake from the oven ❌");
         removeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,6 +188,8 @@ public class CakeGUI extends javax.swing.JFrame {
             }
         });
 
+        displayAllButton.setBackground(new java.awt.Color(162, 107, 255));
+        displayAllButton.setForeground(new java.awt.Color(255, 255, 255));
         displayAllButton.setText("3. View all cakes in the oven 📋");
         displayAllButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,6 +197,8 @@ public class CakeGUI extends javax.swing.JFrame {
             }
         });
 
+        peekTopButton.setBackground(new java.awt.Color(162, 107, 255));
+        peekTopButton.setForeground(new java.awt.Color(255, 255, 255));
         peekTopButton.setText("4. View the front cake in the oven 👀");
         peekTopButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,6 +206,8 @@ public class CakeGUI extends javax.swing.JFrame {
             }
         });
 
+        exitButton.setBackground(new java.awt.Color(162, 59, 239));
+        exitButton.setForeground(new java.awt.Color(255, 255, 255));
         exitButton.setText("Exit 🔚");
         exitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -191,70 +215,96 @@ public class CakeGUI extends javax.swing.JFrame {
             }
         });
 
+        mainTextArea.setEditable(false);
         mainTextArea.setColumns(20);
         mainTextArea.setRows(5);
         jScrollPane1.setViewportView(mainTextArea);
 
+        cakeNameBox.setBackground(new java.awt.Color(250, 232, 255));
+        cakeNameBox.setForeground(new java.awt.Color(255, 79, 203));
         cakeNameBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(182, 32, 224));
         jLabel2.setText("MAIN MENU SECTION");
 
+        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 2, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(217, 126, 255));
         jLabel4.setText("Welcome to the delightful Java application for managing cake orders with oven magic!");
 
-        jLabel1.setText("1. Add a cake section");
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 79, 203));
+        jLabel1.setText("Add a cake section:");
 
-        jLabel5.setText("OTHER OPERATIONS");
+        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(182, 32, 224));
+        jLabel5.setText("                              OTHER OPERATIONS");
 
-        peekLastButton.setText("5. View the last cake added in the oven 👀");
+        peekLastButton.setBackground(new java.awt.Color(162, 154, 250));
+        peekLastButton.setForeground(new java.awt.Color(255, 255, 255));
+        peekLastButton.setText("7. View the last cake added in the oven 👀");
         peekLastButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 peekLastButtonActionPerformed(evt);
             }
         });
 
-        searchByNameButton.setText("6. Search cake by name 🔍");
+        searchByNameButton.setBackground(new java.awt.Color(162, 154, 250));
+        searchByNameButton.setForeground(new java.awt.Color(255, 255, 255));
+        searchByNameButton.setText("5. Search cake by name 🔍");
         searchByNameButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchByNameButtonActionPerformed(evt);
             }
         });
 
-        removeByNameButton.setText("7. Remove cake by name ❌");
+        removeByNameButton.setBackground(new java.awt.Color(162, 154, 250));
+        removeByNameButton.setForeground(new java.awt.Color(255, 255, 255));
+        removeByNameButton.setText("6. Remove cake by name ❌");
         removeByNameButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeByNameButtonActionPerformed(evt);
             }
         });
 
-        clearOvenButton.setText("8. Empty oven ❌");
+        clearOvenButton.setBackground(new java.awt.Color(162, 154, 250));
+        clearOvenButton.setForeground(new java.awt.Color(255, 255, 255));
+        clearOvenButton.setText("15. Empty oven ❌");
         clearOvenButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearOvenButtonActionPerformed(evt);
             }
         });
 
-        reportButton.setText("9. Generate inventory report 📊");
+        reportButton.setBackground(new java.awt.Color(162, 154, 250));
+        reportButton.setForeground(new java.awt.Color(255, 255, 255));
+        reportButton.setText("8. Generate inventory report 📊");
         reportButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 reportButtonActionPerformed(evt);
             }
         });
 
-        sortByDateButton.setText("10. Sort by expiry date 📅");
+        sortByDateButton.setBackground(new java.awt.Color(162, 154, 250));
+        sortByDateButton.setForeground(new java.awt.Color(255, 255, 255));
+        sortByDateButton.setText("13. Sort by expiry date 📅");
         sortByDateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sortByDateButtonActionPerformed(evt);
             }
         });
 
-        sortByNameButton.setText("11. Sort Alphabetically 🔠");
+        sortByNameButton.setBackground(new java.awt.Color(162, 154, 250));
+        sortByNameButton.setForeground(new java.awt.Color(255, 255, 255));
+        sortByNameButton.setText("10. Sort Alphabetically 🔠");
         sortByNameButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sortByNameButtonActionPerformed(evt);
             }
         });
 
+        sortByWeightButton.setBackground(new java.awt.Color(162, 154, 250));
+        sortByWeightButton.setForeground(new java.awt.Color(255, 255, 255));
         sortByWeightButton.setText("12. Sort by weight ⚖");
         sortByWeightButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -262,124 +312,130 @@ public class CakeGUI extends javax.swing.JFrame {
             }
         });
 
-        displayExpiringCakebutton.setText("13. View expiring cakes 👀");
+        displayExpiringCakebutton.setBackground(new java.awt.Color(162, 154, 250));
+        displayExpiringCakebutton.setForeground(new java.awt.Color(255, 255, 255));
+        displayExpiringCakebutton.setText("14. View expiring cakes 👀");
         displayExpiringCakebutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 displayExpiringCakebuttonActionPerformed(evt);
             }
         });
 
-        cakeAgeButton.setText("14. Check cake ages 📆");
+        cakeAgeButton.setBackground(new java.awt.Color(162, 154, 250));
+        cakeAgeButton.setForeground(new java.awt.Color(255, 255, 255));
+        cakeAgeButton.setText("11. Check cake ages 📆");
         cakeAgeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cakeAgeButtonActionPerformed(evt);
             }
         });
 
-        randomButton.setText("15. Random cake generator");
+        randomButton.setBackground(new java.awt.Color(162, 154, 250));
+        randomButton.setForeground(new java.awt.Color(255, 255, 255));
+        randomButton.setText("9. Random cake generator");
         randomButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 randomButtonActionPerformed(evt);
             }
         });
 
+        searchNameBox.setBackground(new java.awt.Color(250, 232, 255));
+        searchNameBox.setForeground(new java.awt.Color(255, 79, 203));
         searchNameBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        removeNameBox.setBackground(new java.awt.Color(250, 232, 255));
+        removeNameBox.setForeground(new java.awt.Color(255, 79, 203));
         removeNameBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel6.setText("Oven operation output:");
+        jLabel6.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(182, 32, 224));
+        jLabel6.setText("OVEN OPERATION OUTPUT:");
+
+        bakerImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cakeapp/images/cake3.jpg"))); // NOI18N
+        bakerImage.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bakerImage.setMaximumSize(new java.awt.Dimension(200, 200));
+        bakerImage.setMinimumSize(new java.awt.Dimension(200, 200));
+        bakerImage.setPreferredSize(new java.awt.Dimension(200, 200));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(363, 363, 363)
+                .addComponent(Title)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(173, 173, 173)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(71, 71, 71)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(335, 335, 335)
-                                .addComponent(Title)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(159, 159, 159)
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(peekTopButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(displayAllButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(cakeWieght, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(cakeName, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(removeButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(addButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(bakerImage, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(weightTextField, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cakeNameBox, javax.swing.GroupLayout.Alignment.LEADING, 0, 131, Short.MAX_VALUE)
+                                    .addComponent(expiryDateTextField, javax.swing.GroupLayout.Alignment.LEADING)))
                             .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(searchByNameButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cakeAgeButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(randomButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(removeByNameButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(peekLastButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
+                                    .addComponent(reportButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(sortByNameButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(30, 30, 30)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGroup(layout.createSequentialGroup()
-                                                    .addComponent(cakeName)
-                                                    .addGap(214, 214, 214)
-                                                    .addComponent(cakeNameBox, 0, 189, Short.MAX_VALUE))
-                                                .addGroup(layout.createSequentialGroup()
-                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jLabel3)
-                                                        .addComponent(cakeWieght))
-                                                    .addGap(27, 27, 27)
-                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(weightTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
-                                                        .addComponent(expiryDateTextField))))
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(addButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(removeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(displayAllButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(peekTopButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addGroup(layout.createSequentialGroup()
-                                                    .addGap(182, 182, 182)
-                                                    .addComponent(jLabel5))))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(searchByNameButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addComponent(removeByNameButton)
-                                                        .addGap(0, 0, Short.MAX_VALUE)))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(searchNameBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(removeNameBox, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addComponent(sortByDateButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addComponent(reportButton, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(clearOvenButton, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addComponent(peekLastButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(0, 0, Short.MAX_VALUE)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(cakeAgeButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(sortByWeightButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(sortByNameButton, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addComponent(randomButton, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(displayExpiringCakebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(38, 38, 38)))
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(101, 101, 101))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(removeNameBox, 0, 168, Short.MAX_VALUE)
+                                            .addComponent(searchNameBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGap(40, 40, 40))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(displayExpiringCakebutton, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                                        .addComponent(sortByWeightButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(sortByDateButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(clearOvenButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(exitButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(61, 61, 61)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(295, 295, 295)
+                        .addComponent(jLabel2)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14)))
+                .addGap(61, 61, 61))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(130, 130, 130))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(8, 8, 8)
                 .addComponent(Title)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel6))
@@ -387,64 +443,67 @@ public class CakeGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cakeName)
-                            .addComponent(cakeNameBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cakeWieght)
-                            .addComponent(weightTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(expiryDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(addButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(removeButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(displayAllButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(peekTopButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(peekLastButton)
-                                .addGap(13, 13, 13)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(searchByNameButton)
-                                            .addComponent(searchNameBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(removeNameBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(removeByNameButton)
-                                            .addComponent(displayExpiringCakebutton)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(65, 65, 65)
-                                        .addComponent(clearOvenButton)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(reportButton)
-                                            .addComponent(randomButton)))))
+                                .addComponent(cakeName)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cakeWieght)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel3)
+                                .addGap(14, 14, 14)
+                                .addComponent(addButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(removeButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(displayAllButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(peekTopButton))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(sortByNameButton)
+                                .addComponent(cakeNameBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(sortByWeightButton))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(100, 100, 100)
-                                .addComponent(cakeAgeButton)))
+                                .addComponent(weightTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(expiryDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bakerImage, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(sortByDateButton)
-                            .addComponent(exitButton)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 528, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(41, Short.MAX_VALUE))
+                            .addComponent(searchByNameButton)
+                            .addComponent(searchNameBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(removeNameBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(removeByNameButton))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(sortByWeightButton, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(peekLastButton))
+                        .addGap(10, 10, 10)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(reportButton)
+                            .addComponent(sortByDateButton))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(displayExpiringCakebutton)
+                            .addComponent(randomButton))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(sortByNameButton)
+                            .addComponent(clearOvenButton))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cakeAgeButton)
+                            .addComponent(exitButton))
+                        .addGap(38, 38, 38))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 528, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8))))
         );
+
+        bakerImage.getAccessibleContext().setAccessibleName("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -769,6 +828,7 @@ public class CakeGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Title;
     private javax.swing.JButton addButton;
+    private javax.swing.JLabel bakerImage;
     private javax.swing.JButton cakeAgeButton;
     private javax.swing.JLabel cakeName;
     private javax.swing.JComboBox<String> cakeNameBox;
