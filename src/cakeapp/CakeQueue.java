@@ -1,3 +1,8 @@
+/*
+ * Student name: Egshiglen Enkhbayar
+ * Student number: 2024359
+ */
+
 // Package declaration for all cake-related classes
 package cakeapp;
 
@@ -247,7 +252,7 @@ public class CakeQueue implements CakeQueueInterface {
     
     @Override
     public Object generateRandomCake() {
-        String[] cakeNames = {"Pineapple Cake", "Strawberry Cake", "Chocolate Cake", "Vanilla Cake", "Plain Cake"};
+        String[] cakeNames = {"Pineapple cake", "Strawberry cake", "Chocolate cake", "Vanilla cake", "Plain cake"};
         int randomIndex = (int) (Math.random() * cakeNames.length); // Getting a random cake name
         String randomName = cakeNames[randomIndex];
         int minWeight = 100;

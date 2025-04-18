@@ -1,7 +1,10 @@
+/*
+ * Student name: Egshiglen Enkhbayar
+ * Student number: 2024359
+ */
+
 // Package declaration for all cake-related classes
 package cakeapp;
-
-import java.util.List;
 
 /**
  * CakeQueueInterface defines methods for managing a queue of cakes.
