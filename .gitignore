@@ -1,0 +1,16 @@
+# Java / NetBeans / Ant build files
+build/
+dist/
+nbproject/private/
+nbproject/Makefile-*
+*.class
+*.log
+*.iml
+out/
+.DS_Store
+.idea/
+.vscode/
+
+# OS and editor junk
+Thumbs.db
+*.swp
