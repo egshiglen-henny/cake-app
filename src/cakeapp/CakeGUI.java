@@ -1,8 +1,3 @@
-/*
- * Student name: Egshiglen Enkhbayar
- * Student number: 2024359
- */
-
 // Package declaration for all cake-related classes
 package cakeapp;
 
