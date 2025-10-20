@@ -59,6 +59,22 @@ java -jar dist/CakeApp.jar
 
 ---
 
+## 📸 Screenshots
+
+### 🏠 Main Window
+![Main GUI](docs/screenshot-main.png)
+### 🍰 Add Cake Form
+![Add Cake](docs/screenshot-addcake.png)
+### 📋 Queue View
+![Queue View](docs/screenshot-queue.png)
+### ⚠️ Validation Message
+![Validation](docs/screenshot-validation.png)
+### 🧁 Empty Oven
+![Empty Oven](docs/screenshot-empty.png)
+
+
+---
+
 ## 🏆 Future Improvements
 - Add search and sorting features for cakes  
 - Improve GUI layout and modernize color scheme  
