@@ -90,6 +90,5 @@ java -jar dist/CakeApp.jar
 
 ## 👩‍💻 Author
 **Egshiglen Enkhbayar**  
-🎓 Higher Diploma in Science in Computing — CCT College Dublin  
 📍 Dublin, Ireland  
 🔗 [GitHub](https://github.com/egshiglen-henny) | [LinkedIn](https://linkedin.com/in/egshiglen)
