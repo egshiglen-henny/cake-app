@@ -1,3 +1,7 @@
+![Java](https://img.shields.io/badge/Java-17-blue)
+![Build](https://img.shields.io/badge/Build-Ant-green)
+![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
+
 # 🍰 Cake App — Java Swing Queue Simulation
 
 A desktop Java Swing app that demonstrates **Object-Oriented Programming (OOP)** and **Queue Data Structure (FIFO)** through a fun cake oven simulation.  
