@@ -15,6 +15,8 @@ Developed as part of my Higher Diploma in Science in Computing.
 - Real-time entry time tracking for cakes  
 - Validation for expiry dates and input fields  
 
+[![Watch the Demo](https://img.shields.io/badge/🎥_Watch_Demo-Drive-purple?style=for-the-badge&logo=google-drive)](https://drive.google.com/file/d/13XsZI9k3Kt0DrR_c8d-lLTNOoC5OPciJ/view)
+
 ---
 
 ## 🧩 Technologies
